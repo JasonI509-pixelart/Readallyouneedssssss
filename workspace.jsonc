@@ -1,0 +1,7 @@
+{
+  "$schema": "https://bit.dev",
+  "teambit.workspace/workspace": {
+    "name": "my-project",
+    "defaultScope": "your-bit-username.your-project-name"
+  }
+}
