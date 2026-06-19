@@ -1,10 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="u0YI_aVRzcYlkxBcFSBKQr1ZMCEBAAKBVDkZmzEMyZE" />
   <title>Read All You Need</title>
-  <!-- Correct Tailwind CDN script -->
-  <script src="https://tailwindcss.com"></script>
+  <!-- FIXED: Correct Tailwind CDN script -->
+  <script src="https://jsdelivr.net"></script>
   <!-- Correct Google Fonts layout -->
   <link rel="preconnect" href="https://googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
@@ -19,3 +21,66 @@
     }
   </style>
 </head>
+<body class="bg-amber-50 min-h-screen flex flex-col justify-between">
+  <!-- Navbar -->
+  <nav class="bg-white border-b-4 border-amber-900/10 px-6 py-4 flex justify-between items-center sticky top-0 z-50 shadow-sm">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-white text-2xl font-bold shadow-md transform -rotate-6">📖</div>
+      <span class="text-2xl font-extrabold text-amber-950 tracking-tight">Book<span class="text-amber-500">Tone</span></span>
+    </div>
+    <div class="hidden md:flex gap-8 font-bold text-amber-950/70">
+      <a href="#" class="hover:text-amber-500 transition-colors">Home</a>
+      <a href="#categories" class="hover:text-amber-500 transition-colors">Categories</a>
+      <a href="#featured" class="hover:text-amber-500 transition-colors">Featured</a>
+      <a href="#about" class="hover:text-amber-500 transition-colors">About</a>
+    </div>
+    <button class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+      <span>My Library</span>
+      <span class="bg-white/20 px-2 py-0.5 rounded-md text-sm">0</span>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <main class="flex-grow max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-6 text-center md:text-left">
+      <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 font-bold px-4 py-1.5 rounded-full text-sm border border-amber-200">
+        ✨ Discover your next adventure
+      </div>
+      <h1 class="text-5xl md:text-6xl font-black text-amber-950 leading-[1.15]">
+        Read All You <span class="text-amber-500 underline decoration-wavy decoration-amber-300">Need</span>, Anywhere.
+      </h1>
+      <p class="text-lg text-amber-900/70 font-medium max-w-md mx-auto md:mx-0">
+        Dive into a world of endless stories, professional guides, and tailored audio experiences designed for curious minds.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
+        <a href="#featured" class="bg-amber-500 hover:bg-amber-600 text-white text-lg font-bold px-8 py-4 rounded-2xl shadow-lg hover:shadow-amber-500/20 transition-all text-center">Start Reading Free</a>
+        <a href="#categories" class="bg-white hover:bg-amber-100/50 text-amber-950 border-2 border-amber-900/10 text-lg font-bold px-8 py-4 rounded-2xl transition-all text-center">Browse Categories</a>
+      </div>
+    </div>
+    
+    <!-- Visual Accent -->
+    <div class="flex justify-center items-center relative">
+      <div class="absolute w-72 h-72 bg-amber-300/30 rounded-full filter blur-3xl -z-10 animate-pulse"></div>
+      <div class="ghost-float bg-white p-8 rounded-3xl shadow-xl border-4 border-amber-900/5 max-w-sm w-full space-y-4">
+        <div class="h-48 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center text-6xl shadow-inner">📚</div>
+        <div class="space-y-2">
+          <div class="h-6 bg-amber-950/10 rounded-md w-3/4"></div>
+          <div class="h-4 bg-amber-950/5 rounded-md w-1/2"></div>
+        </div>
+        <div class="flex justify-between items-center pt-2">
+          <div class="flex -space-x-2">
+            <div class="w-8 h-8 rounded-full bg-amber-200 border-2 border-white flex items-center justify-center text-xs font-bold">👤</div>
+            <div class="w-8 h-8 rounded-full bg-amber-300 border-2 border-white flex items-center justify-center text-xs font-bold">👤</div>
+          </div>
+          <span class="text-sm font-bold text-amber-500">Join 10k+ readers</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-amber-950 text-amber-100/60 py-8 border-t-4 border-amber-900 px-6 text-center text-sm font-medium">
+    <p>&copy; 2024 BookTone. Built for book lovers worldwide.</p>
+  </footer>
+</body>
+</html>
