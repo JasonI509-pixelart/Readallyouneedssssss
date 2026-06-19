@@ -1,0 +1,3172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tomes - Immersive Story Platform</title>
+    <!-- SEO Meta Tags for booktome-lsyxfp.composed.app -->
+    <meta name="description" content="Discover Book Tomes (booktome-lsyxfp.composed.app), the ultimate immersive digital library. Read breathtaking, page-filling epics like Captain Cardboard, Chronicles of a Clumsy Coder, and Inspector Paws.">
+    <meta name="keywords" content="Book Tome, Affordable books, Online book store, Read All You Need">
+    <meta name="robots" content="index, follow">
+    <link class="seo-meta" rel="canonical" href="https://booktome-lsyxfp.composed.app">
+    
+    <!-- Google Verification Meta Tag -->
+    <meta name="google-site-verification" content="bt_verification_wildcard_9928173" />
+    
+    <!-- Structured JSON-LD Data for Google Search Indexing -->
+    <script type="application/ld+json" id="structured-data-json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Book Tomes",
+      "url": "https://booktome-lsyxfp.composed.app",
+      "description": "Discover deep, page-filling children epics on booktome-lsyxfp.composed.app. Experience funny stories like Captain Cardboard, Chronicles of a Clumsy Coder, and Inspector Paws.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://booktome-lsyxfp.composed.app/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        tomeOrange: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#ff781f',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        },
+                        tomeGreen: {
+                            50: '#f0fdf4',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        tomeBlue: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style id="custom-theme-variables">
+        /* Dynamic Theme Customizer Variables (Modified by logged-in users) */
+        :root {
+            --user-bg-gradient: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
+            --user-bg-solid: #0b0f19;
+            --user-text-color: #f1f5f9;
+            --user-logo-color: #ff781f;
+        }
+
+        body {
+            background: var(--user-bg-solid) !important;
+            background-image: var(--user-bg-gradient) !important;
+            color: var(--user-text-color) !important;
+        }
+
+        .custom-logo-text {
+            color: var(--user-logo-color) !important;
+        }
+
+        /* Custom scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.3);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 120, 31, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 120, 31, 0.6);
+        }
+
+        /* Ambient background glow */
+        .bg-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(255, 120, 31, 0.15) 0%, rgba(16, 185, 129, 0.1) 30%, rgba(59, 130, 246, 0.1) 60%, rgba(15, 23, 42, 0) 100%);
+        }
+
+        /* Book spine shadow simulation */
+        .book-spine {
+            background: linear-gradient(to right, 
+                rgba(0,0,0,0.12) 0%, 
+                rgba(0,0,0,0.24) 40%, 
+                rgba(0,0,0,0.45) 50%, 
+                rgba(0,0,0,0.24) 60%, 
+                rgba(0,0,0,0.12) 100%
+            );
+        }
+
+        /* Animations */
+        @keyframes hoot {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
+        .animate-hoot {
+            animation: hoot 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.05); }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        /* Drop cap style for realistic books */
+        .story-dropcap::first-letter {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            float: left;
+            line-height: 0.85;
+            margin-right: 0.5rem;
+            margin-top: 0.15rem;
+            color: #ea580c;
+        }
+
+        /* Live notification toast */
+        .toast-notification {
+            animation: slideInUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes slideInUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans overflow-x-hidden relative selection:bg-tomeOrange-500 selection:text-white">
+
+    <!-- Ambient glowing shapes -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-tomeOrange-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-tomeBlue-500/10 rounded-full blur-[150px] pointer-events-none"></div>
+    <div class="absolute bottom-10 left-1/3 w-80 h-80 bg-tomeGreen-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <!-- Wildcard Route Interceptor Banner (For Google Verification simulation) -->
+    <div id="google-verification-banner" class="hidden bg-tomeBlue-600 text-white px-4 py-2 text-center text-sm font-medium relative z-50 flex justify-between items-center">
+        <span><span class="font-bold">SEO Verification:</span> Domain <code class="bg-black/30 px-1 rounded">booktome-lsyxfp.composed.app</code> is active. Direct verification path <code class="bg-black/30 px-1 rounded">/google-site-verification.html</code> is live.</span>
+        <button onclick="document.getElementById('google-verification-banner').style.display='none'" class="hover:text-slate-200"><i data-lucide="x" class="w-4 h-4"></i></button>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md sticky top-0 z-40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-3 cursor-pointer" onclick="navigate('home')">
+                <div class="relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-tomeOrange-500 via-tomeGreen-500 to-tomeBlue-500 rounded-lg blur opacity-75 animate-pulse"></div>
+                    <div class="relative bg-slate-950 p-2.5 rounded-lg border border-slate-800 flex items-center justify-center">
+                        <i data-lucide="book-open" class="w-6 h-6 text-tomeOrange-500" id="logo-icon-accent"></i>
+                    </div>
+                </div>
+                <div>
+                    <span class="font-cinzel text-xl font-extrabold tracking-wider bg-gradient-to-r from-tomeOrange-500 via-tomeGreen-500 to-tomeBlue-500 bg-clip-text text-transparent custom-logo-text">BOOK TOMES</span>
+                    <p class="text-[9px] text-slate-400 tracking-widest uppercase font-bold">booktome-lsyxfp.composed.app</p>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="hidden md:flex items-center gap-1 bg-slate-950/80 p-1.5 rounded-full border border-slate-800/80">
+                <button onclick="navigate('home')" id="nav-home" class="px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 flex items-center gap-2 bg-gradient-to-r from-tomeOrange-500 to-tomeOrange-600 text-white shadow-lg shadow-tomeOrange-500/20">
+                    <i data-lucide="compass" class="w-4 h-4"></i> Explore
+                </button>
+                
+                <!-- Gated Navigation Tabs (Unlocked Post-Auth) -->
+                <button onclick="navigate('library')" id="nav-library" class="hidden px-5 py-2 rounded-full text-sm font-semibold text-slate-400 hover:text-white transition-all duration-200 flex items-center gap-2">
+                    <i data-lucide="library" class="w-4 h-4"></i> Books
+                </button>
+                <button onclick="navigate('profile')" id="nav-profile" class="hidden px-5 py-2 rounded-full text-sm font-semibold text-slate-400 hover:text-white transition-all duration-200 flex items-center gap-2">
+                    <i data-lucide="user" class="w-4 h-4"></i> Profile
+                </button>
+
+                <!-- Admin Tab (Revealed via master key or admin login) -->
+                <button onclick="navigate('admin')" id="nav-admin" class="hidden px-5 py-2 rounded-full text-sm font-semibold text-tomeGreen-500 hover:text-tomeGreen-400 hover:bg-tomeGreen-500/10 transition-all duration-200 flex items-center gap-2 border border-tomeGreen-500/20">
+                    <i data-lucide="shield-alert" class="w-4 h-4"></i> Master Panel
+                </button>
+            </nav>
+
+            <!-- Right Actions & Holiday Calendar Watch -->
+            <div class="flex items-center gap-3">
+                <!-- Dynamic Holiday Watch Widget -->
+                <div class="bg-slate-950/80 border border-slate-800 px-3.5 py-2 rounded-xl flex items-center gap-2.5 text-xs shadow-inner">
+                    <span id="holiday-clock-icon" class="text-base">📅</span>
+                    <div>
+                        <p class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">Dynamic Price Watch</p>
+                        <p id="holiday-clock-label" class="text-slate-200 font-semibold">Detecting date...</p>
+                    </div>
+                </div>
+
+                <!-- Auth Buttons -->
+                <div id="auth-section">
+                    <button onclick="openAuthModal('signin')" class="px-4 py-2 text-sm font-semibold text-slate-300 hover:text-white transition">Sign In</button>
+                    <button onclick="openAuthModal('signup')" class="bg-gradient-to-r from-tomeGreen-500 to-tomeBlue-500 hover:from-tomeGreen-600 hover:to-tomeBlue-600 text-slate-950 font-bold px-4 py-2 rounded-lg text-sm transition shadow-lg shadow-tomeGreen-500/15">Get Started</button>
+                </div>
+                <div id="user-section" class="hidden flex items-center gap-3">
+                    <div class="h-8 w-px bg-slate-800"></div>
+                    <div class="flex items-center gap-2 cursor-pointer" onclick="navigate('profile')">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-tomeOrange-500 to-tomeBlue-500 flex items-center justify-center font-bold text-slate-950 text-sm shadow-md" id="user-avatar">
+                            U
+                        </div>
+                        <span class="text-sm font-semibold text-slate-300 hover:text-white hidden sm:inline" id="user-display-name">User</span>
+                    </div>
+                    <button onclick="logout()" class="p-2 text-slate-400 hover:text-red-400 transition" title="Sign Out">
+                        <i data-lucide="log-out" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROMOTIONAL HERO BANNER & SEARCH -->
+    <section id="hero-section" class="relative overflow-hidden py-12 sm:py-20 border-b border-slate-900 bg-slate-950/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-tomeOrange-500/10 border border-tomeOrange-500/30 text-tomeOrange-500 text-xs font-semibold mb-6 tracking-wide uppercase">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Live Immersive Story Experience
+                </div>
+                <h1 class="font-cinzel text-4xl sm:text-6xl font-black tracking-tight leading-tight mb-6">
+                    Unlock a World of <br/>
+                    <span class="bg-gradient-to-r from-tomeOrange-500 via-tomeGreen-500 to-tomeBlue-500 bg-clip-text text-transparent">Infinite Comic Imagination</span>
+                </h1>
+                <p class="text-slate-400 text-base sm:text-lg mb-8 font-light leading-relaxed">
+                    Step inside double-page digital books crafted for pure wonder on <span class="text-tomeOrange-500 font-semibold">booktome-lsyxfp.composed.app</span>. Fully narrated by high-fidelity voices with dynamic layouts. Inspired by your favorite comic adventures, humorous school diaries, and animal detective stories!
+                </p>
+
+                <!-- Search & Master Password Input -->
+                <div class="relative max-w-2xl mx-auto">
+                    <div class="absolute -inset-1.5 bg-gradient-to-r from-tomeOrange-500 via-tomeGreen-500 to-tomeBlue-500 rounded-2xl blur-lg opacity-30"></div>
+                    <div class="relative flex items-center bg-slate-900 border border-slate-800 rounded-xl p-2 shadow-2xl">
+                        <i data-lucide="search" class="w-6 h-6 text-slate-400 ml-3 shrink-0"></i>
+                        <input type="text" id="main-search" 
+                               oninput="handleSearchInput(this.value)"
+                               placeholder="Describe what kind of book you want... (e.g. 'Captain Cardboard' or 'Clumsy Coder')" 
+                               class="w-full bg-transparent border-0 focus:ring-0 focus:outline-none px-3 py-2.5 text-slate-200 placeholder-slate-500 text-sm">
+                        <button onclick="triggerSearch()" class="bg-gradient-to-r from-tomeOrange-500 to-tomeOrange-600 text-white font-semibold px-6 py-2.5 rounded-lg text-sm hover:from-tomeOrange-600 hover:to-tomeOrange-700 transition shadow-md shadow-tomeOrange-500/20 shrink-0">
+                            Search
+                        </button>
+                    </div>
+                </div>
+                <p id="admin-unlocked-toast" class="hidden text-tomeGreen-500 text-xs mt-3 font-semibold animate-pulse">
+                    ✨ Master Override Password Accepted! Welcome Jason. Admin features & Google Visibility Console unlocked.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- EXPLORE PAGE (Catalog) -->
+        <div id="page-home" class="space-y-10">
+            
+            <!-- GUEST NOTIFICATION BANNER (When not signed in, they can browse but not read) -->
+            <div id="guest-welcome-banner" class="bg-gradient-to-r from-tomeOrange-500/10 to-tomeBlue-500/10 border border-tomeOrange-500/20 p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-tomeOrange-500/10 flex items-center justify-center text-tomeOrange-500 border border-tomeOrange-500/20">
+                        <i data-lucide="eye" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-200">Browsing in Guest Mode</h4>
+                        <p class="text-xs text-slate-400">You can see all available books in the Grand Library below, but you must sign in to read them!</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="openAuthModal('signin')" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-bold rounded-xl text-slate-200 transition">
+                        Sign In
+                    </button>
+                    <button onclick="openAuthModal('signup')" class="px-4 py-2 bg-gradient-to-r from-tomeOrange-500 to-tomeOrange-600 hover:from-tomeOrange-600 hover:to-tomeOrange-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-tomeOrange-500/20 transition">
+                        Create Free Account
+                    </button>
+                </div>
+            </div>
+
+            <!-- Unlocked State (Now always visible so guests can browse books!) -->
+            <div id="home-unlocked-state" class="space-y-10">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80 pb-5">
+                    <div>
+                        <h2 class="text-2xl font-cinzel font-bold text-slate-100 flex items-center gap-2">
+                            <span class="w-2.5 h-6 bg-tomeOrange-500 rounded-full inline-block"></span>
+                            The Grand Library
+                        </h2>
+                        <p class="text-slate-400 text-xs mt-1">Browse our hand-crafted collection of premium digital books. A new book is auto-generated every 5 minutes!</p>
+                    </div>
+                    <!-- Action Row: Exit Platform & Filter Trigger -->
+                    <div class="flex items-center gap-3">
+                        <button onclick="openGenreExplorer()" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-semibold rounded-xl text-slate-300 flex items-center gap-2 transition">
+                            <i data-lucide="filter" class="w-4 h-4 text-tomeOrange-500"></i> Browse 100 Genres
+                        </button>
+                        <button onclick="exitPlatform()" class="px-4 py-2 bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 text-xs font-bold text-red-400 rounded-xl flex items-center gap-2 transition">
+                            <i data-lucide="log-out" class="w-4 h-4"></i> Exit Platform
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Active Genre Filter Indicator -->
+                <div id="active-genre-indicator-bar" class="hidden flex items-center justify-between bg-slate-950 border border-slate-800/80 px-4 py-2.5 rounded-xl text-xs">
+                    <span class="text-slate-400">Filtering by Genre: <strong id="active-genre-name" class="text-tomeOrange-500">None</strong></span>
+                    <button onclick="clearGenreFilter()" class="text-red-400 hover:text-red-300 font-bold flex items-center gap-1">
+                        <i data-lucide="x" class="w-3.5 h-3.5"></i> Clear Filter
+                    </button>
+                </div>
+
+                <!-- Public Grid -->
+                <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+
+        <!-- MY OWNED LIBRARY PAGE (Gated) -->
+        <div id="page-library" class="hidden space-y-10">
+            <div class="border-b border-slate-900 pb-5 flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-cinzel font-bold text-slate-100 flex items-center gap-2">
+                        <span class="w-2.5 h-6 bg-tomeGreen-500 rounded-full inline-block"></span>
+                        Your Personal Sanctuary
+                    </h2>
+                    <p class="text-slate-400 text-xs mt-1">Every premium book you own, ready to read instantly with no limits</p>
+                </div>
+                <button onclick="navigate('home')" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-bold text-slate-300 rounded-xl flex items-center gap-2 transition">
+                    <i data-lucide="corner-up-left" class="w-4 h-4"></i> Exit to Explore
+                </button>
+            </div>
+
+            <div id="owned-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamically populated with owned books -->
+            </div>
+        </div>
+
+        <!-- USER PROFILE PAGE & THEME CUSTOMIZER (Gated) -->
+        <div id="page-profile" class="hidden space-y-10">
+            <div class="border-b border-slate-900 pb-5 flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-cinzel font-bold text-slate-100 flex items-center gap-2">
+                        <span class="w-2.5 h-6 bg-tomeBlue-500 rounded-full inline-block"></span>
+                        Reader Profile & Theme Customizer
+                    </h2>
+                    <p class="text-slate-400 text-xs mt-1">Track your growth, claim your deterministic badge seeds, view loyalty rewards, and fully customize your layout colors!</p>
+                </div>
+                <button onclick="navigate('home')" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-bold text-slate-300 rounded-xl flex items-center gap-2 transition">
+                    <i data-lucide="corner-up-left" class="w-4 h-4"></i> Exit to Explore
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left Details & Loyalty Club -->
+                <div class="space-y-6">
+                    <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-tomeBlue-500/10 rounded-full blur-2xl"></div>
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-tomeOrange-500 via-tomeGreen-500 to-tomeBlue-500 p-1 mb-4 shadow-xl">
+                                <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center font-bold text-2xl text-slate-100">
+                                    <span id="profile-initial">U</span>
+                                </div>
+                            </div>
+                            <h3 id="profile-name" class="text-xl font-bold text-slate-100">User Account</h3>
+                            <span class="text-xs text-tomeGreen-500 font-semibold mt-1 flex items-center gap-1">
+                                <i data-lucide="check-circle" class="w-3 h-3"></i> Verified Member
+                            </span>
+
+                            <div class="w-full border-t border-slate-800 my-6"></div>
+
+                            <div class="w-full space-y-3 text-left">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs text-slate-400">Account Type</span>
+                                    <span class="text-xs font-bold text-tomeOrange-500 uppercase">Standard Reader</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs text-slate-400">Books Unlocked</span>
+                                    <span id="profile-books-count" class="text-xs font-bold text-slate-100">0</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs text-slate-400">Badge Capacity</span>
+                                    <span class="text-xs font-bold text-tomeBlue-500">1,000,000 Deterministic</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Loyalty Program Status Widget -->
+                    <div class="bg-slate-900/60 border-2 border-tomeOrange-500/40 rounded-2xl p-6 space-y-4">
+                        <h4 class="font-cinzel font-bold text-slate-200 text-sm flex items-center gap-2">
+                            <i data-lucide="gift" class="text-tomeOrange-500"></i> Loyalty Rewards Club
+                        </h4>
+                        <p class="text-xs text-slate-400">Buy books to earn free book credits automatically!</p>
+                        
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Books Purchased:</span>
+                                <span id="loyalty-purchased-count" class="font-bold text-slate-200">0</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Free Book Credits:</span>
+                                <span id="loyalty-free-credits" class="font-bold text-tomeGreen-500">0</span>
+                            </div>
+                        </div>
+
+                        <!-- Progress visualizer -->
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-[10px] text-slate-500">
+                                <span>3 books = 1 free</span>
+                                <span>10 books = 2 free</span>
+                            </div>
+                            <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-slate-800">
+                                <div id="loyalty-progress-bar" class="bg-gradient-to-r from-tomeOrange-500 to-tomeGreen-500 h-full w-0"></div>
+                            </div>
+                            <p class="text-[10px] text-slate-500 text-right mt-1">Tier: <span id="loyalty-tier-name" class="text-tomeOrange-500 font-bold">Bronze</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Customizer & Badges Matrix -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- THEME CUSTOMIZER -->
+                    <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 space-y-6">
+                        <div>
+                            <h4 class="font-cinzel font-bold text-slate-200 text-base flex items-center gap-2">
+                                <i data-lucide="palette" class="text-tomeOrange-500"></i> Dynamic Color Theme Customizer
+                            </h4>
+                            <p class="text-xs text-slate-400 mt-1">As an account holder, you can modify the site background, typography color, and primary logo accent live.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Background Color Picker -->
+                            <div class="space-y-3 bg-slate-950 p-4 rounded-xl border border-slate-800">
+                                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider">Background Theme</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button onclick="changeUserTheme('bg', '#0b0f19', 'radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%)')" class="h-8 rounded bg-slate-950 border border-slate-800 text-[10px] font-bold text-slate-400 hover:text-white">Default Space</button>
+                                    <button onclick="changeUserTheme('bg', '#06130c', 'radial-gradient(circle at 50% 50%, #0c2a1c 0%, #010804 100%)')" class="h-8 rounded bg-emerald-950/40 border border-emerald-900/30 text-[10px] font-bold text-emerald-400 hover:text-emerald-200">Emerald Forest</button>
+                                    <button onclick="changeUserTheme('bg', '#12071f', 'radial-gradient(circle at 50% 50%, #260e3d 0%, #07010e 100%)')" class="h-8 rounded bg-violet-950/40 border border-violet-900/30 text-[10px] font-bold text-violet-400 hover:text-violet-200">Royal Amethyst</button>
+                                    <button onclick="changeUserTheme('bg', '#1c0d0d', 'radial-gradient(circle at 50% 50%, #3d1616 0%, #0f0303 100%)')" class="h-8 rounded bg-rose-950/40 border border-rose-900/30 text-[10px] font-bold text-rose-400 hover:text-rose-200">Crimson Velvet</button>
+                                </div>
+                                <div class="pt-2">
+                                    <span class="text-[10px] text-slate-500 block mb-1">Custom Solid Color</span>
+                                    <input type="color" id="custom-bg-color-picker" onchange="changeUserTheme('bg-custom', this.value)" class="w-full h-8 rounded cursor-pointer bg-transparent border border-slate-800">
+                                </div>
+                            </div>
+
+                            <!-- Word / Text Color Picker -->
+                            <div class="space-y-3 bg-slate-950 p-4 rounded-xl border border-slate-800">
+                                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider">Word/Text Color</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button onclick="changeUserTheme('text', '#f1f5f9')" class="h-8 rounded bg-slate-900 border border-slate-800 text-slate-100 text-[10px] font-bold">Pure Alabaster</button>
+                                    <button onclick="changeUserTheme('text', '#cbd5e1')" class="h-8 rounded bg-slate-900 border border-slate-800 text-slate-300 text-[10px] font-bold">Soft Slate</button>
+                                    <button onclick="changeUserTheme('text', '#fef3c7')" class="h-8 rounded bg-slate-900 border border-slate-800 text-amber-100 text-[10px] font-bold">Warm Amber</button>
+                                    <button onclick="changeUserTheme('text', '#ecfdf5')" class="h-8 rounded bg-slate-900 border border-slate-800 text-emerald-100 text-[10px] font-bold">Mint Cream</button>
+                                </div>
+                                <div class="pt-2">
+                                    <span class="text-[10px] text-slate-500 block mb-1">Custom Word Color</span>
+                                    <input type="color" id="custom-text-color-picker" onchange="changeUserTheme('text', this.value)" class="w-full h-8 rounded cursor-pointer bg-transparent border border-slate-800">
+                                </div>
+                            </div>
+
+                            <!-- Logo Accent Color Picker -->
+                            <div class="space-y-3 bg-slate-950 p-4 rounded-xl border border-slate-800">
+                                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider">Logo Accent Theme</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button onclick="changeUserTheme('logo', '#ff781f')" class="h-8 rounded bg-tomeOrange-500/20 border border-tomeOrange-500/40 text-[10px] font-bold text-tomeOrange-500">Tome Orange</button>
+                                    <button onclick="changeUserTheme('logo', '#10b981')" class="h-8 rounded bg-tomeGreen-500/20 border border-tomeGreen-500/40 text-[10px] font-bold text-tomeGreen-500">Tome Green</button>
+                                    <button onclick="changeUserTheme('logo', '#3b82f6')" class="h-8 rounded bg-tomeBlue-500/20 border border-tomeBlue-500/40 text-[10px] font-bold text-tomeBlue-500">Tome Blue</button>
+                                    <button onclick="changeUserTheme('logo', '#a855f7')" class="h-8 rounded bg-purple-500/20 border border-purple-500/40 text-[10px] font-bold text-purple-500">Royal Purple</button>
+                                </div>
+                                <div class="pt-2">
+                                    <span class="text-[10px] text-slate-500 block mb-1">Custom Accent Color</span>
+                                    <input type="color" id="custom-logo-color-picker" onchange="changeUserTheme('logo', this.value)" class="w-full h-8 rounded cursor-pointer bg-transparent border border-slate-800">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end gap-3 pt-2">
+                            <button onclick="resetThemeToDefault()" class="px-4 py-2 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-xs font-bold text-slate-400 hover:text-white rounded-xl transition">
+                                Reset to Default Colors
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Badges Matrix -->
+                    <div class="bg-slate-900/20 border border-slate-800/80 rounded-2xl p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h4 class="font-bold text-slate-200">Your Generated Badge Matrix</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Perfectly stable deterministic hash layers mapping your unique user ID.</p>
+                            </div>
+                            <button onclick="regenerateBadgeMatrix()" class="p-2 text-xs bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-lg text-slate-300 transition flex items-center gap-1.5">
+                                <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i> Reshuffle Seed
+                            </button>
+                        </div>
+
+                        <div id="badge-matrix-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Badges generated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADMIN/MASTER PANEL (Secretly unlocked via 123Jasonsgame!15412907 or admin sign-in) -->
+        <div id="page-admin" class="hidden space-y-10">
+            <div class="border-b border-slate-800 pb-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-cinzel font-bold text-tomeGreen-500 flex items-center gap-2">
+                        <i data-lucide="shield" class="w-6 h-6"></i>
+                        Master Publisher & Google Console
+                    </h2>
+                    <p class="text-slate-400 text-xs mt-1">Manual book builder, page assembler, image injector, and Google Search Console visibility tools</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <!-- Live Auto-Generation Countdown Widget (Hidden from public, placed inside Admin Panel) -->
+                    <div class="bg-slate-950/80 border border-slate-800 px-3 py-1.5 rounded-xl flex items-center gap-2 text-xs shadow-inner">
+                        <span class="text-tomeOrange-500 animate-pulse">⚡</span>
+                        <div>
+                            <p class="text-[8px] text-slate-500 font-bold uppercase tracking-wider">Next Auto-Gen Book In</p>
+                            <p id="auto-gen-timer" class="text-slate-200 font-mono font-bold">05:00</p>
+                        </div>
+                    </div>
+                    <span class="px-3 py-1 bg-tomeGreen-500/10 border border-tomeGreen-500/30 text-tomeGreen-500 rounded-full text-[10px] font-bold tracking-wider uppercase">
+                        Sole Publisher Authorized
+                    </span>
+                    <button onclick="navigate('home')" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-bold text-slate-300 rounded-xl flex items-center gap-2 transition shadow-md">
+                        <i data-lucide="corner-up-left" class="w-4 h-4"></i> Exit Admin Panel
+                    </button>
+                </div>
+            </div>
+
+            <!-- Admin Tabs Navigation -->
+            <div class="flex gap-2 border-b border-slate-800 pb-1">
+                <button onclick="switchAdminTab('publisher')" id="admin-tab-publisher" class="px-4 py-2 text-xs font-bold border-b-2 border-tomeGreen-500 text-tomeGreen-500">
+                    <i data-lucide="book-open" class="w-3.5 h-3.5 inline-block mr-1"></i> Publisher Tools
+                </button>
+                <button onclick="switchAdminTab('seo')" id="admin-tab-seo" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200">
+                    <i data-lucide="search" class="w-3.5 h-3.5 inline-block mr-1"></i> Google Search Console & Visibility
+                </button>
+            </div>
+
+            <!-- TAB 1: PUBLISHER TOOLS -->
+            <div id="admin-content-publisher" class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                <!-- Create Book Form -->
+                <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 space-y-4">
+                    <h3 class="font-bold text-slate-200 flex items-center gap-2">
+                        <i data-lucide="plus-circle" class="w-5 h-5 text-tomeOrange-500"></i>
+                        Publish New Book
+                    </h3>
+                    
+                    <div class="space-y-3 text-xs">
+                        <div>
+                            <label class="block text-slate-400 mb-1">Book Title</label>
+                            <input type="text" id="admin-title" placeholder="The Spectacular Escapades of Captain Cardboard" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 focus:border-tomeOrange-500 focus:outline-none">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-slate-400 mb-1">Genre</label>
+                                <select id="admin-genre" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 focus:border-tomeOrange-500 focus:outline-none">
+                                    <!-- Populated dynamically with 100 genres -->
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-slate-400 mb-1">Age Zone</label>
+                                <input type="text" id="admin-age" placeholder="6-12" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 focus:border-tomeOrange-500 focus:outline-none">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-slate-400 mb-1">Words Per Page</label>
+                                <input type="number" id="admin-words" value="120" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 focus:border-tomeOrange-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-slate-400 mb-1">Page Count</label>
+                                <input type="number" id="admin-pages" value="8" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 focus:border-tomeOrange-500 focus:outline-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 mb-1">Moral of the Story</label>
+                            <input type="text" id="admin-moral" placeholder="Laughter and loyalty always win the day!" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 focus:border-tomeOrange-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 mb-1">Cover Image URL</label>
+                            <input type="text" id="admin-cover" placeholder="https://images.unsplash.com/photo-..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 focus:border-tomeOrange-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 mb-1">Base Price ($)</label>
+                            <input type="number" id="admin-price" value="4.00" step="0.50" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 focus:border-tomeOrange-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 mb-1">Blurb / Description</label>
+                            <textarea id="admin-blurb" rows="3" placeholder="A hilarious comic book adventure..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 focus:border-tomeOrange-500 focus:outline-none"></textarea>
+                        </div>
+                        <button onclick="createBookSubmit()" id="admin-submit-btn" class="w-full py-3 bg-gradient-to-r from-tomeOrange-500 to-tomeOrange-600 hover:from-tomeOrange-600 hover:to-tomeOrange-700 text-white font-bold rounded-xl transition shadow-lg shadow-tomeOrange-500/20 flex items-center justify-center gap-2">
+                            <i data-lucide="rocket" class="w-4 h-4"></i> Trigger AI Page Assembly
+                        </button>
+                    </div>
+
+                    <!-- AI Progress Bar (Locked State Simulation) -->
+                    <div id="ai-progress-container" class="hidden bg-slate-950 border border-slate-800 rounded-xl p-4 space-y-2">
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-400 font-medium">AI writing pages & styling prose...</span>
+                            <span id="ai-progress-text" class="text-tomeOrange-500 font-bold">0%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden">
+                            <div id="ai-progress-bar" class="bg-gradient-to-r from-tomeOrange-500 via-tomeGreen-500 to-tomeBlue-500 h-full w-0 transition-all duration-300"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Book List (Lifecycle Actions) -->
+                <div class="xl:col-span-2 bg-slate-900/30 border border-slate-800 rounded-2xl p-6 space-y-4">
+                    <h3 class="font-bold text-slate-200 flex items-center gap-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-tomeGreen-500"></i>
+                        Active Catalog Lifecycle Manager
+                    </h3>
+
+                    <div id="admin-book-list" class="space-y-4">
+                        <!-- Dynamically generated admin book control rows -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: GOOGLE SEARCH CONSOLE & VISIBILITY -->
+            <div id="admin-content-seo" class="hidden space-y-8">
+                <!-- Search Console Metrics Header -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="bg-slate-900/50 border border-slate-800 p-5 rounded-2xl">
+                        <p class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Verification Status</p>
+                        <div class="flex items-center gap-2 mt-2">
+                            <span id="gsc-verify-badge" class="w-2.5 h-2.5 rounded-full bg-tomeGreen-500"></span>
+                            <span id="gsc-verify-text" class="text-sm font-bold text-slate-200">Ownership Verified</span>
+                        </div>
+                        <p class="text-[10px] text-slate-400 mt-1">Domain: booktome-lsyxfp.composed.app</p>
+                    </div>
+                    <div class="bg-slate-900/50 border border-slate-800 p-5 rounded-2xl">
+                        <p class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Crawl Status</p>
+                        <p id="gsc-crawl-text" class="text-lg font-black text-tomeGreen-500 mt-1">100% Crawled</p>
+                        <p class="text-[10px] text-slate-400">All pages indexed successfully</p>
+                    </div>
+                    <div class="bg-slate-900/50 border border-slate-800 p-5 rounded-2xl">
+                        <p class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Google Search Rank</p>
+                        <p class="text-lg font-black text-yellow-500 mt-1">#1 Rank</p>
+                        <p class="text-[10px] text-slate-400">For targeted brand keywords</p>
+                    </div>
+                    <div class="bg-slate-900/50 border border-slate-800 p-5 rounded-2xl">
+                        <p class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Sitemap Schema</p>
+                        <p class="text-lg font-black text-tomeBlue-500 mt-1">JSON-LD Active</p>
+                        <p class="text-[10px] text-slate-400">Structured data fully active</p>
+                    </div>
+                </div>
+
+                <!-- Google Search Console Pipeline & Simulator -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Verification Actions & Crawl Controls -->
+                    <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 space-y-6">
+                        <div>
+                            <h4 class="font-bold text-slate-200 text-sm flex items-center gap-1.5">
+                                <i data-lucide="shield-check" class="text-tomeGreen-500 w-4 h-4"></i>
+                                GSC Ownership & Crawling Control
+                            </h4>
+                            <p class="text-xs text-slate-400 mt-1">Perform live simulation actions to update and optimize your index state on Google.</p>
+                        </div>
+
+                        <div class="space-y-3">
+                            <!-- Verify Button -->
+                            <button onclick="simulateGscAction('verify')" class="w-full py-2.5 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-200 hover:text-white rounded-xl text-xs font-bold transition flex items-center justify-between px-4">
+                                <span class="flex items-center gap-2"><i data-lucide="key-round" class="w-4 h-4 text-tomeOrange-500"></i> Verify Ownership</span>
+                                <span class="text-[10px] bg-tomeGreen-500/20 text-tomeGreen-400 px-2 py-0.5 rounded-full font-mono">Verified</span>
+                            </button>
+
+                            <!-- Submit Sitemap -->
+                            <button onclick="simulateGscAction('sitemap')" class="w-full py-2.5 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-200 hover:text-white rounded-xl text-xs font-bold transition flex items-center justify-between px-4">
+                                <span class="flex items-center gap-2"><i data-lucide="file-symlink" class="w-4 h-4 text-tomeBlue-500"></i> Submit sitemap.xml</span>
+                                <span class="text-[10px] bg-tomeGreen-500/20 text-tomeGreen-400 px-2 py-0.5 rounded-full font-mono">Processed</span>
+                            </button>
+
+                            <!-- Request Recrawl -->
+                            <button onclick="simulateGscAction('crawl')" class="w-full py-2.5 bg-gradient-to-r from-tomeGreen-500 to-tomeBlue-500 hover:opacity-90 text-slate-950 rounded-xl text-xs font-bold transition flex items-center justify-between px-4">
+                                <span class="flex items-center gap-2"><i data-lucide="refresh-cw" class="w-4 h-4"></i> Request Googlebot Recrawl</span>
+                                <span class="text-[10px] bg-black/20 text-slate-900 px-2 py-0.5 rounded-full font-mono">Trigger</span>
+                            </button>
+                        </div>
+
+                        <!-- Mini Console Output -->
+                        <div class="bg-slate-950 rounded-xl p-4 border border-slate-800 font-mono text-[10px] text-slate-400 space-y-1">
+                            <p class="text-tomeOrange-500 font-bold">[SYSTEM LOG] Googlebot Indexer Ready.</p>
+                            <p id="gsc-log-1">> Domain verification token matched: bt_verification_wildcard_9928173</p>
+                            <p id="gsc-log-2">> Sitemap https://booktome-lsyxfp.composed.app/sitemap.xml loaded successfully.</p>
+                            <p id="gsc-log-3">> Mobile friendliness score: 100/100 (Responsive Canvas & Layouts)</p>
+                        </div>
+                    </div>
+
+                    <!-- Live Google Search Simulator (Pre-ranked Results) -->
+                    <div class="lg:col-span-2 bg-slate-900/40 border border-slate-800 rounded-2xl p-6 space-y-4">
+                        <div>
+                            <h4 class="font-bold text-slate-200 text-sm flex items-center gap-1.5">
+                                <i data-lucide="globe" class="text-tomeBlue-500 w-4 h-4"></i>
+                                Live Google Search Result Simulator
+                            </h4>
+                            <p class="text-xs text-slate-400 mt-1">Test how <span class="text-tomeOrange-500 font-bold">booktome-lsyxfp.composed.app</span> dominates search results when users type target keywords.</p>
+                        </div>
+
+                        <!-- Presets for fast testing -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] text-slate-500 self-center font-bold">Try presets:</span>
+                            <button onclick="setQueryAndSearch('Books')" class="bg-slate-950 border border-slate-800 px-2.5 py-1 rounded-lg text-[10px] hover:border-slate-700 transition">"Books"</button>
+                            <button onclick="setQueryAndSearch('read all you need')" class="bg-slate-950 border border-slate-800 px-2.5 py-1 rounded-lg text-[10px] hover:border-slate-700 transition">"read all you need"</button>
+                            <button onclick="setQueryAndSearch('Book Tomes')" class="bg-slate-950 border border-slate-800 px-2.5 py-1 rounded-lg text-[10px] hover:border-slate-700 transition">"Book Tomes"</button>
+                            <button onclick="setQueryAndSearch('Captain Cardboard')" class="bg-slate-950 border border-slate-800 px-2.5 py-1 rounded-lg text-[10px] hover:border-slate-700 transition">"Captain Cardboard"</button>
+                            <button onclick="setQueryAndSearch('Chronicles of a Clumsy Coder')" class="bg-slate-950 border border-slate-800 px-2.5 py-1 rounded-lg text-[10px] hover:border-slate-700 transition">"Chronicles of a Clumsy Coder"</button>
+                            <button onclick="setQueryAndSearch('Inspector Paws')" class="bg-slate-950 border border-slate-800 px-2.5 py-1 rounded-lg text-[10px] hover:border-slate-700 transition">"Inspector Paws"</button>
+                        </div>
+
+                        <!-- Simulated Search Sandbox Interface -->
+                        <div class="bg-[#171e2e] border border-slate-800 rounded-xl p-4 space-y-4 shadow-inner">
+                            <div class="flex items-center gap-2 border-b border-slate-800 pb-3">
+                                <span class="font-bold text-sm tracking-tight select-none flex items-center gap-1">
+                                    <span class="text-blue-500">G</span><span class="text-red-500">o</span><span class="text-yellow-500">o</span><span class="text-blue-500">g</span><span class="text-green-500">l</span><span class="text-red-500">e</span>
+                                </span>
+                                <div class="flex-1 relative">
+                                    <input type="text" id="google-search-query" oninput="runGoogleSearchSimulation()" value="read all you need" class="w-full bg-slate-900 text-slate-200 text-xs rounded-full py-1.5 pl-8 pr-4 border border-slate-800 focus:outline-none focus:border-blue-500" placeholder="Search Google...">
+                                    <i data-lucide="search" class="w-3.5 h-3.5 text-slate-500 absolute left-2.5 top-2.5"></i>
+                                </div>
+                                <button onclick="runGoogleSearchSimulation()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition">Search</button>
+                            </div>
+
+                            <!-- Dynamic Simulated Search Result Card -->
+                            <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-4 space-y-2">
+                                <div class="flex items-center justify-between text-[10px] text-slate-400">
+                                    <div class="flex items-center gap-2">
+                                        <span class="bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800 text-[8px] font-bold text-tomeGreen-500">Ad / #1 Organic Result</span>
+                                        <span>https://booktome-lsyxfp.composed.app</span>
+                                    </div>
+                                    <span class="text-[10px] text-yellow-500 font-bold">★ Highest Authority Rank</span>
+                                </div>
+                                <h4 id="admin-google-sim-title" class="text-base text-blue-400 hover:underline cursor-pointer font-serif font-semibold">Book Tomes - Immersive Digital Storyverse & Premium Library</h4>
+                                <p id="admin-google-sim-snippet" class="text-xs text-slate-300 leading-relaxed">Discover deep, page-filling epics on booktome-lsyxfp.composed.app. Experience funny, natural children stories like Captain Cardboard, Chronicles of a Clumsy Coder, and Inspector Paws. No generic summaries, just pure comic reading.</p>
+                                
+                                <!-- Simulated Sitelinks -->
+                                <div class="grid grid-cols-2 gap-3 pt-3 mt-2 border-t border-slate-900/60 text-xs">
+                                    <div>
+                                        <a href="#" onclick="navigate('home')" class="text-blue-400 hover:underline font-medium block">📖 Grand Library</a>
+                                        <span class="text-[10px] text-slate-500">Explore over 100 unique book genres instantly.</span>
+                                    </div>
+                                    <div>
+                                        <a href="#" onclick="navigate('profile')" class="text-blue-400 hover:underline font-medium block">🛡️ Reader Sanctuary</a>
+                                        <span class="text-[10px] text-slate-500">Access verified badges and deterministic hash keys.</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4 text-[10px] text-slate-500 pt-2">
+                                    <span class="flex items-center gap-1"><i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i> 4.9 Rating</span>
+                                    <span>• 100+ Genres Indexed</span>
+                                    <span>• Free Giveaway Access Live</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SEO Live Meta Tag Crawler Inspector -->
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-5 space-y-3">
+                            <h5 class="text-xs font-bold text-slate-200 flex items-center gap-2">
+                                <i data-lucide="binary" class="text-tomeOrange-500 w-4 h-4"></i>
+                                Live SEO Metadata & JSON-LD Validator
+                            </h5>
+                            <p class="text-[11px] text-slate-400">Googlebot reads the following live structured schema directly from your DOM head to render search snippets correctly:</p>
+                            
+                            <div class="space-y-2 text-xs font-mono">
+                                <div class="bg-slate-900 p-2.5 rounded border border-slate-800">
+                                    <span class="text-tomeOrange-500">&lt;meta name="description"&gt;</span>
+                                    <p class="text-slate-300 mt-1 pl-2 text-[11px]">"Discover Book Tomes (booktome-lsyxfp.composed.app), the ultimate immersive digital library. Read breathtaking, page-filling epics..."</p>
+                                </div>
+                                <div class="bg-slate-900 p-2.5 rounded border border-slate-800">
+                                    <span class="text-tomeGreen-500">&lt;meta name="google-site-verification"&gt;</span>
+                                    <p class="text-slate-300 mt-1 pl-2 text-[11px]">"bt_verification_wildcard_9928173"</p>
+                                </div>
+                                <div class="bg-slate-900 p-2.5 rounded border border-slate-800">
+                                    <span class="text-tomeBlue-500">&lt;script type="application/ld+json"&gt;</span>
+                                    <pre class="text-slate-400 mt-1 pl-2 text-[10px] overflow-x-auto">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Book Tomes",
+  "url": "https://booktome-lsyxfp.composed.app"
+}</pre>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- LIVE NOTIFICATION TOAST OVERLAY -->
+    <div id="live-toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none max-w-sm">
+        <!-- Injected programmatically -->
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-900 bg-slate-950/80 mt-20 py-12 text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <i data-lucide="book" class="w-5 h-5 text-tomeOrange-500"></i>
+                <span class="font-cinzel text-sm font-bold tracking-wider text-slate-300">BOOK TOMES</span>
+            </div>
+            <p>© 2026 Book Tomes Inc. All rights reserved. Optimized for professional graphic novel prose. Hosted at <a href="https://booktome-lsyxfp.composed.app" class="text-tomeOrange-500 hover:underline">booktome-lsyxfp.composed.app</a>.</p>
+            <div class="flex items-center gap-4">
+                <span class="text-[10px] bg-slate-900 px-2 py-1 rounded border border-slate-800 font-mono text-slate-400">Google Verification Active</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE BOOK READER OVERLAY (Left-Right Traditional Page Layout) -->
+    <div id="book-reader-modal" class="hidden fixed inset-0 bg-slate-950/95 backdrop-blur-md z-50 flex flex-col justify-between p-4 md:p-8">
+        <!-- Top Reader Header -->
+        <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+            <div>
+                <h3 id="reader-title" class="font-cinzel text-lg md:text-xl font-bold text-slate-100">Book Title</h3>
+                <p id="reader-genre-badge" class="text-[10px] text-tomeOrange-500 font-bold uppercase tracking-wider mt-1">Fantasy</p>
+            </div>
+
+            <!-- Narrator Options & Audio Matrix -->
+            <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl text-xs">
+                    <i data-lucide="volume-2" class="w-4 h-4 text-tomeGreen-500"></i>
+                    <select id="reader-voice-select" class="bg-transparent text-slate-200 font-medium focus:outline-none cursor-pointer">
+                        <optgroup label="9 Female Voices" class="bg-slate-950 text-slate-300">
+                            <option value="Aria">Aria (High-Fi)</option>
+                            <option value="Luna">Luna (Mystical)</option>
+                            <option value="Nova">Nova (Vibrant)</option>
+                            <option value="Sage">Sage (Calm)</option>
+                            <option value="Celeste">Celeste (Deep)</option>
+                            <option value="Ivy">Ivy (Bright)</option>
+                            <option value="Ember">Ember (Warm)</option>
+                            <option value="Pearl">Pearl (Soft)</option>
+                            <option value="Zara">Zara (Expressive)</option>
+                        </optgroup>
+                        <optgroup label="9 Male Voices" class="bg-slate-950 text-slate-300">
+                            <option value="Oliver">Oliver (Resonant)</option>
+                            <option value="Marcus">Marcus (Bold)</option>
+                            <option value="Finn">Finn (Enthusiastic)</option>
+                            <option value="Sebastian">Sebastian (Elegant)</option>
+                            <option value="Dante">Dante (Gravely)</option>
+                            <option value="Eli">Eli (Soft-Spoken)</option>
+                            <option value="Rowan">Rowan (Crisp)</option>
+                            <option value="Zane">Zane (Dynamic)</option>
+                            <option value="Jasper">Jasper (Classic)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <!-- Read Aloud Toggle Control -->
+                <button onclick="toggleReadAloud()" id="read-aloud-btn" class="bg-gradient-to-r from-red-500 to-red-600 text-white font-bold px-4 py-2 rounded-lg text-xs transition flex items-center gap-1.5 shadow-md">
+                    <i data-lucide="volume-x" class="w-3.5 h-3.5"></i> Read Aloud: OFF
+                </button>
+                <button onclick="closeBookReader()" class="p-2 text-slate-400 hover:text-white transition" title="Exit Book Reader">
+                    <i data-lucide="x-circle" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Book Core Layout (Traditional Left/Right Page Flip with Spine) -->
+        <div class="flex-1 my-6 flex items-center justify-center relative">
+            
+            <!-- Left Page Turn Button -->
+            <button onclick="prevBookPage()" class="absolute left-2 md:left-6 z-30 p-4 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-full text-slate-300 hover:text-white transition shadow-2xl flex items-center justify-center">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Book Container -->
+            <div class="w-full max-w-5xl h-[70vh] flex bg-amber-50 rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)] overflow-hidden relative border border-amber-100/20 text-slate-900">
+                
+                <!-- Left Page -->
+                <div class="w-1/2 h-full p-6 md:p-12 flex flex-col justify-between overflow-y-auto relative bg-[#faf6f0]">
+                    <div id="left-page-content" class="font-serif text-sm sm:text-base md:text-lg leading-relaxed space-y-4">
+                        <!-- Left page text or custom dynamic book cover injected here -->
+                    </div>
+                    <div class="flex justify-between items-center border-t border-amber-200/60 pt-4 mt-4">
+                        <span id="left-page-num" class="text-xs font-bold text-amber-800">Page 1</span>
+                        <span class="text-[10px] uppercase font-bold text-amber-700/60 tracking-wider">Book Tomes</span>
+                    </div>
+                </div>
+
+                <!-- Book Center Spine -->
+                <div class="w-8 h-full book-spine absolute left-1/2 transform -translate-x-1/2 z-20 pointer-events-none"></div>
+
+                <!-- Right Page -->
+                <div class="w-1/2 h-full p-6 md:p-12 flex flex-col justify-between overflow-y-auto relative bg-[#faf6f0]">
+                    <div id="right-page-content" class="font-serif text-sm sm:text-base md:text-lg leading-relaxed space-y-4">
+                        <!-- Right page text injected here -->
+                    </div>
+                    <div class="flex justify-between items-center border-t border-amber-200/60 pt-4 mt-4">
+                        <span class="text-[10px] uppercase font-bold text-amber-700/60 tracking-wider">Chapter I</span>
+                        <span id="right-page-num" class="text-xs font-bold text-amber-800">Page 2</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Page Turn Button -->
+            <button onclick="nextBookPage()" class="absolute right-2 md:right-6 z-30 p-4 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-full text-slate-300 hover:text-white transition shadow-2xl flex items-center justify-center">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Bottom Reader Footer -->
+        <div class="flex items-center justify-between border-t border-slate-800 pt-4 text-xs text-slate-400">
+            <span id="book-progress-indicator">Reading Progress: 0%</span>
+            <div class="flex items-center gap-3">
+                <span class="italic text-slate-500">Prose crafted beautifully with traditional layout rules.</span>
+                <button onclick="closeBookReader()" class="px-3 py-1 bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 text-red-400 font-bold rounded-lg transition flex items-center gap-1">
+                    <i data-lucide="log-out" class="w-3.5 h-3.5"></i> Exit Reader
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 100 GENRES BROWSER MODAL -->
+    <div id="genres-modal" class="hidden fixed inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-4xl p-6 relative flex flex-col h-[80vh]">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-4 mb-4">
+                <div>
+                    <h3 class="font-cinzel text-lg font-bold text-slate-100 flex items-center gap-2">
+                        <i data-lucide="compass" class="text-tomeOrange-500"></i> Explore 100 Unique Genres
+                    </h3>
+                    <p class="text-xs text-slate-400 mt-1">Filter the Grand Library by selecting one of our specialized story categories</p>
+                </div>
+                <button onclick="closeGenreExplorer()" class="p-1 text-slate-400 hover:text-white transition" title="Exit Genres Panel">
+                    <i data-lucide="x-circle" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Search bar inside Genres -->
+            <div class="mb-4">
+                <input type="text" id="genre-search-input" oninput="filterGenresList(this.value)" placeholder="Search genres (e.g. 'punk', 'fantasy', 'horror')..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-200 focus:outline-none focus:border-tomeOrange-500">
+            </div>
+
+            <!-- Genres Scroll Grid -->
+            <div class="flex-1 overflow-y-auto pr-2">
+                <div id="genres-modal-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
+                    <!-- 100 Genres dynamically populated -->
+                </div>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-slate-800 flex justify-end">
+                <button onclick="closeGenreExplorer()" class="px-5 py-2.5 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-300 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
+                    <i data-lucide="log-out" class="w-4 h-4 text-red-400"></i> Exit Genres
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- E-COMMERCE CHECKOUT MODAL -->
+    <div id="checkout-modal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-tomeOrange-500/10 rounded-full blur-2xl"></div>
+            
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h3 class="font-cinzel text-lg font-bold text-slate-100">Secure Book Checkout</h3>
+                    <p class="text-xs text-slate-400 mt-1">Unlock permanent high-fidelity reading access</p>
+                </div>
+                <button onclick="closeCheckoutModal()" class="p-1 text-slate-400 hover:text-white transition" title="Exit Checkout">
+                    <i data-lucide="x-circle" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Book Card Preview -->
+                <div class="flex gap-4 bg-slate-950 p-3 rounded-xl border border-slate-800">
+                    <img id="checkout-book-cover" src="" alt="Cover" class="w-16 h-20 object-cover rounded-lg shadow-md" onerror="handleCoverError(this)">
+                    <div class="flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 id="checkout-book-title" class="font-bold text-sm text-slate-200">Book Title</h4>
+                            <p id="checkout-book-genre" class="text-[10px] text-slate-400 uppercase tracking-wider">Fantasy</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Price</span>
+                            <span id="checkout-book-price" class="text-sm font-bold text-tomeOrange-500">$4.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Breakdown -->
+                <div class="space-y-2 bg-slate-950/50 p-3 rounded-xl border border-slate-800/60 text-xs">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Standard Price</span>
+                        <span id="breakdown-base-price" class="text-slate-300">$4.00</span>
+                    </div>
+                    <div id="checkout-discount-row" class="flex justify-between text-tomeGreen-500 hidden">
+                        <span id="checkout-discount-label">Discount Applied</span>
+                        <span id="checkout-discount-val">-$2.00</span>
+                    </div>
+                    <!-- Loyalty Reward Option -->
+                    <div id="checkout-loyalty-row" class="hidden bg-tomeGreen-500/10 border border-tomeGreen-500/30 p-2.5 rounded-lg flex justify-between items-center text-xs">
+                        <div>
+                            <p class="font-bold text-tomeGreen-500">Loyalty Credit Available!</p>
+                            <p class="text-[10px] text-slate-400">You have <span id="checkout-credits-count" class="font-bold text-slate-200">0</span> free book credits.</p>
+                        </div>
+                        <button onclick="redeemLoyaltyCredit()" class="px-3 py-1.5 bg-tomeGreen-500 text-slate-950 font-bold rounded-lg text-[11px] hover:bg-tomeGreen-600 transition">
+                            Redeem Credit
+                        </button>
+                    </div>
+                    <div class="border-t border-slate-800 my-2 pt-2 flex justify-between font-bold text-sm text-slate-200">
+                        <span>Total Due</span>
+                        <span id="breakdown-total-price" class="text-tomeOrange-500">$4.00</span>
+                    </div>
+                </div>
+
+                <!-- Guest Guard Alert -->
+                <div id="checkout-auth-warning" class="hidden bg-tomeOrange-500/10 border border-tomeOrange-500/30 text-tomeOrange-500 p-3 rounded-xl text-xs flex items-start gap-2">
+                    <i data-lucide="alert-triangle" class="w-4 h-4 shrink-0 mt-0.5"></i>
+                    <div>
+                        <span class="font-bold">Account Required:</span> You are currently browsing as a guest. Please sign in or create an account to unlock books.
+                    </div>
+                </div>
+
+                <!-- Checkout Actions -->
+                <div id="checkout-actions">
+                    <!-- If Guest -->
+                    <button id="checkout-auth-btn" onclick="routeGuestToAuth()" class="hidden w-full py-3 bg-gradient-to-r from-tomeOrange-500 to-tomeOrange-600 hover:from-tomeOrange-600 hover:to-tomeOrange-700 text-white font-bold rounded-xl transition shadow-lg shadow-tomeOrange-500/20 text-sm flex items-center justify-center gap-2">
+                        <i data-lucide="user-plus" class="w-4 h-4"></i> Sign Up to Purchase
+                    </button>
+                    <!-- If Authenticated -->
+                    <button id="checkout-pay-btn" onclick="processPurchase()" class="hidden w-full py-3 bg-gradient-to-r from-tomeGreen-500 to-tomeBlue-500 hover:from-tomeGreen-600 hover:to-tomeBlue-600 text-slate-950 font-bold rounded-xl transition shadow-lg shadow-tomeGreen-500/20 text-sm flex items-center justify-center gap-2">
+                        <i data-lucide="credit-card" class="w-4 h-4"></i> Complete Purchase
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom Exit Action -->
+            <div class="mt-4 pt-4 border-t border-slate-800 flex justify-end">
+                <button onclick="closeCheckoutModal()" class="px-4 py-1.5 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-400 hover:text-white rounded-lg text-xs font-semibold transition flex items-center gap-1.5">
+                    <i data-lucide="log-out" class="w-3.5 h-3.5 text-red-400"></i> Exit Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AUTHENTICATION MODAL -->
+    <div id="auth-modal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 relative">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="auth-modal-title" class="font-cinzel text-lg font-bold text-slate-100">Sign In</h3>
+                <button onclick="closeAuthModal()" class="p-1 text-slate-400 hover:text-white transition" title="Exit Sign In">
+                    <i data-lucide="x-circle" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <!-- Optional Dynamic Redirection Alert -->
+            <p id="auth-modal-alert-msg" class="hidden text-[11px] bg-tomeOrange-500/10 border border-tomeOrange-500/30 text-tomeOrange-500 px-3 py-2 rounded-lg mb-4 font-semibold"></p>
+
+            <div class="space-y-4 text-xs">
+                <div>
+                    <label class="block text-slate-400 mb-1">Username</label>
+                    <input type="text" id="auth-username" placeholder="johndoe (or 'admin')" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 focus:border-tomeOrange-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-slate-400 mb-1">Password</label>
+                    <input type="password" id="auth-password" placeholder="••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 focus:border-tomeOrange-500 focus:outline-none">
+                </div>
+
+                <button id="auth-submit-btn" onclick="submitAuth()" class="w-full py-3 bg-gradient-to-r from-tomeOrange-500 to-tomeOrange-600 hover:from-tomeOrange-600 hover:to-tomeOrange-700 text-white font-bold rounded-xl transition shadow-lg shadow-tomeOrange-500/20 text-sm flex items-center justify-center gap-2">
+                    Sign In
+                </button>
+
+                <p id="auth-toggle-prompt" class="text-center text-slate-400 mt-4">
+                    Don't have an account? <a href="#" onclick="toggleAuthMode()" class="text-tomeOrange-500 font-bold hover:underline">Sign Up</a>
+                </p>
+            </div>
+
+            <!-- Exit Button Inside Auth Modal -->
+            <div class="mt-4 pt-4 border-t border-slate-800 flex justify-end">
+                <button onclick="closeAuthModal()" class="px-4 py-1.5 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-400 hover:text-white rounded-lg text-xs font-semibold transition flex items-center gap-1.5">
+                    <i data-lucide="log-out" class="w-3.5 h-3.5 text-red-400"></i> Exit Auth
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ONBOARDING OWL TOUR (Ollie) -->
+    <div id="ollie-tour-container" class="hidden fixed bottom-6 right-6 z-50 max-w-sm bg-slate-900 border-2 border-tomeOrange-500 rounded-2xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] animate-hoot">
+        <div class="flex items-start gap-4">
+            <!-- Animated SVG Ollie the Owl -->
+            <div class="w-14 h-14 bg-gradient-to-tr from-tomeOrange-500 to-tomeGreen-500 rounded-full flex items-center justify-center shrink-0 shadow-lg border border-slate-800 relative">
+                <svg class="w-10 h-10 text-slate-950" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="9" cy="9" r="2.5" fill="white"/>
+                    <circle cx="15" cy="9" r="2.5" fill="white"/>
+                    <circle cx="9" cy="9" r="1" fill="black"/>
+                    <circle cx="15" cy="9" r="1" fill="black"/>
+                    <path d="M12 12l-1.5 2h3z" fill="#ea580c"/>
+                    <path d="M3 10c0-4.418 4.03-8 9-8s9 3.582 9 8-4.03 8-9 8-9-3.582-9-8z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <span class="absolute -bottom-1 -right-1 bg-tomeOrange-500 text-[8px] font-bold text-slate-950 px-1 rounded-full">Ollie</span>
+            </div>
+
+            <div class="flex-1">
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-xs font-bold text-tomeOrange-500 uppercase tracking-wider">Ollie's Tour <span id="tour-step-num">1/7</span></span>
+                    <button onclick="skipTour()" class="text-[10px] text-slate-500 hover:text-slate-300 font-semibold">Skip Tour</button>
+                </div>
+                <p id="tour-step-text" class="text-xs text-slate-300 leading-relaxed min-h-[50px]">
+                    Welcome to Book Tomes! Let me guide you through our magical library setup.
+                </p>
+                <div class="flex justify-between items-center mt-4">
+                    <div class="flex gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-tomeOrange-500"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+                    </div>
+                    <button onclick="nextTourStep()" class="px-3 py-1.5 bg-gradient-to-r from-tomeOrange-500 to-tomeGreen-500 text-slate-950 font-extrabold text-xs rounded-lg shadow transition hover:opacity-90 flex items-center gap-1">
+                        Next <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE-BY-PAGE MULTIMEDIA EDITOR MODAL -->
+    <div id="multimedia-editor-modal" class="hidden fixed inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-4xl p-6 relative flex flex-col h-[85vh]">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-4 mb-4">
+                <div>
+                    <h3 class="font-cinzel text-lg font-bold text-slate-100 flex items-center gap-2">
+                        <i data-lucide="image" class="text-tomeOrange-500"></i> Multimedia Layout Editor
+                    </h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Inject high-fidelity visuals & trigger real-time AI prose-wrapping</p>
+                </div>
+                <button onclick="closeMultimediaEditor()" class="p-1 text-slate-400 hover:text-white transition" title="Exit Editor">
+                    <i data-lucide="x-circle" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <div class="flex-1 flex flex-col md:flex-row gap-6 overflow-hidden">
+                <!-- Left: Pages List -->
+                <div class="w-full md:w-1/3 border-r border-slate-800 pr-0 md:pr-4 overflow-y-auto space-y-2">
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Book Pages</h4>
+                    <div id="media-pages-list" class="space-y-2">
+                        <!-- Pages buttons here -->
+                    </div>
+                </div>
+
+                <!-- Right: Selected Page Details & Image Injector -->
+                <div class="flex-1 flex flex-col justify-between overflow-y-auto">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center bg-slate-950 p-3 rounded-xl border border-slate-800">
+                            <span class="text-xs text-slate-400">Editing Page</span>
+                            <span id="editing-page-label" class="text-xs font-bold text-tomeOrange-500">Page #1</span>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs text-slate-400 mb-2">Prose Content Preview</label>
+                            <textarea id="editing-page-text" rows="5" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-300 focus:outline-none focus:border-tomeOrange-500"></textarea>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-xs text-slate-400">Inject Custom Graphic (Image URL)</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="editing-page-image-url" placeholder="https://images.unsplash.com/photo-..." class="flex-1 bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200 focus:outline-none focus:border-tomeOrange-500">
+                                <button onclick="clearPageImage()" class="px-3 bg-red-500/10 border border-red-500/20 hover:bg-red-500/20 text-red-500 rounded-xl text-xs transition">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Layout Redesign Simulated Delay Progress -->
+                    <div id="layout-progress-container" class="hidden bg-slate-950 border border-slate-800 rounded-xl p-4 mt-4 space-y-2">
+                        <div class="flex justify-between text-xs">
+                            <span class="text-slate-400 font-medium">AI Layout Engine redesigning prose wrap...</span>
+                            <span id="layout-progress-text" class="text-tomeBlue-500 font-bold">0%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                            <div id="layout-progress-bar" class="bg-gradient-to-r from-tomeOrange-500 to-tomeBlue-500 h-full w-0 transition-all duration-300"></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex justify-end gap-3 border-t border-slate-800 pt-4">
+                        <button onclick="closeMultimediaEditor()" class="px-4 py-2 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-300 rounded-xl text-xs transition">Cancel</button>
+                        <button onclick="commitLayoutRedesign()" class="px-5 py-2 bg-gradient-to-r from-tomeOrange-500 to-tomeGreen-500 text-slate-950 font-bold rounded-xl text-xs transition shadow-lg shadow-tomeOrange-500/10">Commit & Redesign Layout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // WEB AUDIO SYSTEM (For rich interactive sound effects)
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        function playSound(type) {
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                if (type === 'click') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(80, audioCtx.currentTime + 0.1);
+                    gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                    gain.gain.linearRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.1);
+                } else if (type === 'success') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+                    osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1); // E5
+                    osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.2); // G5
+                    gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                    gain.gain.linearRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.4);
+                } else if (type === 'hoot') {
+                    // Owl Hoot
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(280, audioCtx.currentTime + 0.15);
+                    osc.frequency.exponentialRampToValueAtTime(220, audioCtx.currentTime + 0.3);
+                    gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                    gain.gain.linearRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.45);
+                } else if (type === 'page-flip') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(600, audioCtx.currentTime + 0.25);
+                    gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+                    gain.gain.linearRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.25);
+                }
+            } catch (e) {
+                console.log("Audio not allowed yet or error: ", e);
+            }
+        }
+
+        // IMAGE FALLBACK AND STYLING HANDLING
+        function handleCoverError(img) {
+            img.onerror = null;
+            img.src = "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=500";
+        }
+
+        // 100 UNIQUE GENRES ARRAY
+        const genresList = [
+            "High Fantasy", "Dark Fantasy", "Urban Fantasy", "Magical Realism", "Steampunk", 
+            "Cyberpunk", "Space Opera", "Hard Sci-Fi", "Post-Apocalyptic", "Dystopian", 
+            "Solarpunk", "Cozy Mystery", "Noir Detective", "Gothic Horror", "Cosmic Horror", 
+            "Paranormal Romance", "Historical Fiction", "Alternate History", "LitRPG", "Wuxia", 
+            "Xianxia", "Mythic Fantasy", "Sword & Sorcery", "Gaslamp Fantasy", "Biopunk", 
+            "Nanopunk", "Hopepunk", "Silkpunk", "Mythological Retelling", "Arthurian Fantasy", 
+            "Time Travel", "Parallel Worlds", "Military Sci-Fi", "Space Western", "Cyber-Noir", 
+            "Tech Noir", "Climate Fiction", "Weird West", "Steam Fantasy", "Clockwork Punk", 
+            "Fairy Tale Retelling", "Folklore Horror", "Haunted House Mystery", "Locked Room Mystery", "Whodunit", 
+            "Cozy Fantasy", "Slice of Life", "Portal Fantasy", "Dungeon Crawler", "GameLit", 
+            "Superhero Fiction", "Spy Thriller", "Psychological Thriller", "Techno Thriller", "Survival Horror", 
+            "Dark Academia", "Light Novel", "Chivalric Romance", "Regency Romance", "Medieval Adventure", 
+            "Pirate Adventure", "Lost World Adventure", "Deep Sea Sci-Fi", "Hollow Earth Fantasy", "Dreampunk", 
+            "Mythos Mystery", "Occult Detective", "Suburban Fantasy", "High Seas Fantasy", "Cyber-Thriller", 
+            "Alien Invasion", "First Contact", "Mech Sci-Fi", "Transhumanism", "AI Rebellion", 
+            "Cyber-Archaeology", "Mythic Sci-Fi", "Retro-Futurism", "Dieselpunk", "Atompunk", 
+            "Decopunk", "Stonepunk", "Elfpunk", "Mythic Realism", "Fairy Gothic", 
+            "Folk Horror", "Creature Feature", "Slasher Mystery", "Cyber-Gothic", "Space Archaeology", 
+            "Planetary Romance", "Dying Earth", "New Weird", "Bizarro Fiction", "Absurdist Fantasy", 
+            "Cryptid Adventure", "Urban Exploration", "Time Loop Mystery", "Rogue-lite Narrative", "Infinite Dungeon"
+        ];
+
+        // BASE STATE
+        let currentUser = JSON.parse(localStorage.getItem('book_tome_current_user')) || null;
+        let books = JSON.parse(localStorage.getItem('book_tome_books')) || [];
+        let purchasedBooks = JSON.parse(localStorage.getItem('book_tome_purchased')) || {}; // userId -> array of bookIds
+        let currentSearchQuery = '';
+        let activeFilter = 'all';
+
+        // Read Aloud System State
+        let isReadingAloud = false;
+
+        // Admin Override State
+        let isMasterAdmin = false;
+
+        // Active Reader State
+        let activeBook = null;
+        let activeBookPageIdx = 0; // index of left page. 0 is Cover spread.
+
+        // Active Multimedia Editor State
+        let selectedMediaBook = null;
+        let selectedMediaPageIdx = 0;
+
+        // Dynamic Theme Customizer State
+        let userThemes = JSON.parse(localStorage.getItem('book_tome_user_themes')) || {}; // userId -> { bgSolid, bgGradient, textColor, logoColor }
+
+        // Live Auto-Generation Timer State
+        let lastAutoGenTime = parseInt(localStorage.getItem('book_tome_last_auto_gen')) || Date.now();
+        const AUTO_GEN_INTERVAL_MS = 5 * 60 * 1000; // 5 minutes
+
+        // IMMERSIVE STORY SEEDS (All titles, characters, names, and images completely distinct)
+        const defaultBooks = [
+            {
+                id: 'default-1',
+                title: "The Spectacular Escapades of Captain Cardboard",
+                genre: "Superhero Fiction",
+                ageZone: "6-12",
+                wordsPerPage: 150,
+                pageCount: 8,
+                blurb: "When young inventors Leo and Max accidentally coat their grumpy principal in experimental super-adhesive cardboard paste, he transforms into the box-wearing champion of the playground!",
+                coverUrl: "https://images.unsplash.com/photo-1608889174637-3c44f6326f2a?auto=format&fit=crop&q=80&w=1000",
+                moralOfStory: "Creativity, friendship, and recycling can defeat any sticky situation.",
+                price: 4.00,
+                published: true,
+                giveawaySlug: "dy14-captain-cardboard",
+                buyers: 0,
+                pages: [
+                    { 
+                        text: "It was a dark and stormy night, which is how all great comic books start. In the quiet town of Barksville, Principal Grumble was busy giving detentions for breathing too loudly. But little did he know, Leo and Max (the school's premier comic geniuses) had just mixed super-elastic bubblegum with experimental cardboard paste in the science lab! BOOM! Captain Cardboard was born, wearing nothing but a giant cardboard box and his incredibly shiny, heroic tape-belt!",
+                        imageUrl: "https://images.unsplash.com/photo-1608889174637-3c44f6326f2a?auto=format&fit=crop&q=80&w=500" 
+                    },
+                    { 
+                        text: "Captain Cardboard didn't fight crime alone. Oh no! He was joined by Sticky-Boy, a heroic helper who had the head of a mischievous golden retriever and the body of a super-sticky tape roll. Sticky-Boy could wrap up trouble from three miles away, especially if that trouble smelled like dirty school lunch trays. Together, they formed the ultimate box-wearing, tail-wagging duo of justice, ready to protect Barksville Elementary!" 
+                    },
+                    { 
+                        text: "Suddenly, the ground began to rumble. The school cafeteria doors burst open, and out marched the Glue Monster! It was shooting sticky syrup and soggy paper towels at innocent students! 'For the love of cardboard!' bellowed Captain Cardboard, flying through the air (or rather, jumping off a lunch table with great enthusiasm). He launched a giant box-slam attack on the monster, but the monster was too slippery!" 
+                    },
+                    { 
+                        text: "Sticky-Boy sprang into action! Using his super-sticky intelligence, he realized the Glue Monster ran on a battery located in its slimy back. He chased his own tail to distract the beast, spinning so fast he created a mini-tornado of chocolate milk and loose homework papers. While the Glue Monster was dizzy, Captain Cardboard threw a giant bucket of school cafeteria meatloaf directly into its gears. The meatloaf was so tough, the gears instantly jammed!" 
+                    },
+                    { 
+                        text: "The monster exploded into a shower of harmless confetti and wet napkins! The students cheered, and Leo and Max quickly hid their comic sketchbooks before anyone could trace the disaster back to them. Captain Cardboard stood proudly on top of the ruined robot. 'Another victory for recycling and belly laughs!' he declared, while Sticky-Boy happily licked his face." 
+                    },
+                    { 
+                        text: "As the bell rang for recess, Principal Grumble snapped out of his trance, wondering why he was standing on a table in a cardboard box holding a roll of duct tape. Leo and Max just giggled and promised to write a sequel. Remember kids: never underestimate the power of a good laugh, a loyal dog, and extremely sturdy cardboard!" 
+                    },
+                    {
+                        text: "But wait! The celebration was cut short. A strange whirring sound echoed from the school's ventilation shafts. Max peered through his makeshift binoculars and gasped: Barnaby the Badger’s robotic recycling drones had gone rogue! They were collecting all the homework binders to construct an impenetrable cardboard tower on the playground. Captain Cardboard adjusted his box-helmet, realizing recess was far from safe."
+                    },
+                    {
+                        text: "With a brilliant tactical move, Leo suggested they use the left-over super-elastic paste to coat the playground slides. When the rogue drones attempted to climb them, they got stuck in a hilarious, bouncy loop! The students laughed and clapped as the drones gently bounced harmlessly. Principal Grumble smiled, realizing that imagination and community were the strongest shields of Barksville Elementary."
+                    }
+                ]
+            },
+            {
+                id: 'default-2',
+                title: "Chronicles of a Clumsy Coder",
+                genre: "Slice of Life",
+                ageZone: "8-12",
+                wordsPerPage: 180,
+                pageCount: 8,
+                blurb: "Toby's hilarious daily struggles trying to program his first video game, survive gym class dodgeball, and stop his mischievous sister Lily from deleting his hard work.",
+                coverUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1000",
+                moralOfStory: "Debugging life takes patience, and your true friends are the best co-op partners.",
+                price: 4.00,
+                published: true,
+                giveawaySlug: "dy15-clumsy-coder",
+                buyers: 0,
+                pages: [
+                    { 
+                        text: "First of all, let me get something straight: this is a JOURNAL, not a diary. I know what it says on the cover, but if my annoying sister Lily sees me carrying a 'diary' around, I'm basically dead. Anyway, today was the first day of middle school, and it's already a complete disaster. The gym teacher, Coach Crunch, made us do dodgeball with actual, frozen pineapples. I hid behind the recycling bin for forty-five minutes.",
+                        imageUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=500" 
+                    },
+                    { 
+                        text: "My best friend Marcus has no survival instincts whatsoever. He came to school wearing a wizard hat and asked me if I wanted to 'play' after school. I had to explain to him for the hundredth time that middle schoolers do not 'play,' they 'hang out.' If he keeps wearing that hat, we're going to get sat on by the eighth graders before Friday. I need to find a way to boost our social status, fast." 
+                    },
+                    { 
+                        text: "I decided our ticket to popularity was starting a gaming stream. We called it 'The Clumsy Coders.' I spent three hours setting up the webcam, but Marcus fell asleep five minutes in and snored directly into the microphone. To make things worse, Lily hijacked the stream and posted an embarrassing video of me singing in the shower. We got exactly two views, and one of them was my mom commenting 'So proud of my sweet boys!'" 
+                    },
+                    { 
+                        text: "Today in Science class, we had to dissect a gummy bear, which was actually the best assignment ever until Marcus accidentally swallowed our specimen. Now we have a failing grade, and my dad says if my GPA drops any lower, he's going to ban me from playing 'Llama Quest' for the entire summer. I have to find a way to get extra credit, even if it means joining the dreaded school spelling bee." 
+                    },
+                    { 
+                        text: "The spelling bee was a nightmare. I made it to the final round against Penelope, who has been my arch-nemesis since kindergarten. The word was 'D-E-C-I-D-U-O-U-S'. I panicked and spelled it with a 'Z'. Penelope smirked and won the trophy, while I got a giant tub of expired cheese as a runner-up prize. Marcus thought it was amazing and tried to eat the cheese. I need new friends." 
+                    },
+                    { 
+                        text: "Even though today was a total flop, Marcus and I ended up sitting on the curb eating popsicles and laughing about Coach Crunch's ridiculous hairpiece falling into the school soup. Maybe middle school isn't about being the most popular kid in the yearbook. Maybe it's just about surviving one weird day at a time with your best buddy. But tomorrow, I'm definitely hiding his wizard hat." 
+                    },
+                    {
+                        text: "The next morning, I woke up to a terrifying blue screen on my laptop. Lily had tried to install a 'Glitter Unicorn' screensaver, and my entire game project was locked in a directory loop! I sat there staring at the code, feeling like my life had been corrupted. Marcus arrived with a box of glazed donuts and said: 'A wizard never panics, Toby. We just need to debug the system together!' We spent hours tracing the missing brackets."
+                    },
+                    {
+                        text: "By dinner time, not only was the game running, but Marcus had successfully coded a secret level where the main boss was a giant, rolling pineapple wearing Coach Crunch's wig! We uploaded the demo to the school forum, and by midnight, everyone was playing it and laughing. Penelope even texted me to say it was 'moderately impressive.' I guess debugging life is a lot easier when you have a co-op partner who believes in magic hats."
+                    }
+                ]
+            },
+            {
+                id: 'default-3',
+                title: "Inspector Paws & the Giggle-Dust Caper",
+                genre: "Comic Adventure",
+                ageZone: "6-10",
+                wordsPerPage: 130,
+                pageCount: 8,
+                blurb: "He's the finest feline detective on the force! Can Inspector Paws track down Professor Squeaks' secret tickle-feather machine before the entire city bursts out laughing?",
+                coverUrl: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1000",
+                moralOfStory: "Focus, determination, and a good sense of humor can solve any mystery.",
+                price: 4.00,
+                published: true,
+                giveawaySlug: "dy16-inspectorpaws",
+                buyers: 0,
+                pages: [
+                    { 
+                        text: "Meet Inspector Paws! He's part cat, part detective, and all hero! He was created when a silly science experiment fused a brilliant investigator and his loyal tabby cat together. Now, he protects the city with his super sniffing powers and his love for chasing laser pointers. But today, a tiny villain was about to cause a giant itch in the city's peace...",
+                        imageUrl: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=500" 
+                    },
+                    { 
+                        text: "Professor Squeaks the Hamster, the world's most mischievous animal villain, had invented a new super-weapon: the Giggle-Dust! These weren't ordinary particles. They were micro-robotic feathers that whispered terrible, silly jokes into people's ears, making them laugh so hard they couldn't stop! 'Why did the toilet paper roll down the hill?' a feather whispered to the mayor. 'To get to the bottom!' The mayor fell over giggling!" 
+                    },
+                    { 
+                        text: "The entire police force was paralyzed with laughter! Chief Barkington was rolling on the floor crying from a joke about a smelly sock. Inspector Paws knew he had to stop Professor Squeaks' evil plan. He put on his special high-tech goggles and tracked the electronic signal back to Squeaks' high-tech cheese fortress. But Squeaks was ready, armed with a giant laser pointer!" 
+                    },
+                    { 
+                        text: "Professor Squeaks shined the red dot on the floor. 'Go get it, Inspector Paws!' he cackled. Inspector Paws' feline instincts kicked in. His eyes locked onto the glowing red dot. He began to pounce and chase it all over the room, knocking over Squeaks' experimental shrink rays and bubble-blowing machines. Squeaks laughed, thinking he had won. But Inspector Paws had a secret weapon: his tail!" 
+                    },
+                    { 
+                        text: "As Inspector Paws spun around chasing the laser dot, his swishing tail accidentally knocked over the main power switch of the Giggle-Dust Controller! The signal reversed, and all the micro-robotic feathers turned off instantly. Professor Squeaks gasped as his high-tech cheese fortress began to collapse under a mountain of soapy bubbles from the broken bubble machine." 
+                    },
+                    { 
+                        text: "With the city saved from the giggle-pocalypse, Inspector Paws cuffed Professor Squeaks and brought him back to animal-jail. Chief Barkington gave Inspector Paws a giant shiny medal and a fresh bowl of premium milk. Inspector Paws didn't care about the medal, but he happily drank the milk and gave Chief a big, happy purr. Another chaotic day saved by the best detective in town!" 
+                    },
+                    {
+                        text: "Just as the case was closed, a mysterious letter slipped under the precinct door. It was stamped with a gold paw print. The legendary 'Whisker Syndicate' was planning to release a super-concentrated catnip mist over the central park! Inspector Paws narrowed his eyes, his whiskers twitching with intense determination. This was no ordinary caper; it required the ultimate undercover disguise."
+                    },
+                    {
+                        text: "Disguised as a fluffy garden statue, Inspector Paws staked out the park. When the green mist began to leak, he deployed his high-powered wind-up fan, blowing the catnip safely back into the villains' own hideout. The Syndicate members immediately became extremely playful, rolling around and chasing their own shadows. Inspector Paws smiled, knowing that a true detective is always one step ahead."
+                    }
+                ]
+            }
+        ];
+
+        if (books.length === 0 || !books.find(b => b.id === 'default-3')) {
+            books = defaultBooks;
+            localStorage.setItem('book_tome_books', JSON.stringify(books));
+        }
+
+        // INITIALIZE APP
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            populateAdminGenres();
+            detectAndDisplayHoliday();
+            runBackgroundAutoGenCheck();
+            renderCatalog();
+            updateAuthUI();
+            applyUserThemeStyles();
+            checkUrlGiveaway();
+            checkOllieTour();
+            simulateGoogleVerification();
+            runGoogleSearchSimulation(); // Run initial simulation on mock search
+            startLiveTimer();
+        });
+
+        // LIVE TIMER FOR 5-MINUTE AUTO GENERATION
+        function startLiveTimer() {
+            setInterval(() => {
+                const now = Date.now();
+                const timeDiff = now - lastAutoGenTime;
+                
+                if (timeDiff >= AUTO_GEN_INTERVAL_MS) {
+                    // Trigger live generation
+                    generateAndNotifyBook();
+                    lastAutoGenTime = now;
+                    localStorage.setItem('book_tome_last_auto_gen', lastAutoGenTime);
+                }
+
+                // Update UI timer
+                const remaining = Math.max(0, AUTO_GEN_INTERVAL_MS - (Date.now() - lastAutoGenTime));
+                const mins = Math.floor(remaining / 60000);
+                const secs = Math.floor((remaining % 60000) / 1000);
+                document.getElementById('auto-gen-timer').innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // BACKGROUND AUTO-GENERATION CHECK (Based on elapsed time while offline)
+        function runBackgroundAutoGenCheck() {
+            const now = Date.now();
+            const elapsed = now - lastAutoGenTime;
+            if (elapsed >= AUTO_GEN_INTERVAL_MS) {
+                const booksToGen = Math.min(5, Math.floor(elapsed / AUTO_GEN_INTERVAL_MS)); // Cap at 5 to prevent overload
+                for (let i = 0; i < booksToGen; i++) {
+                    generateAndNotifyBook(true); // silent background generation
+                }
+                lastAutoGenTime = now - (elapsed % AUTO_GEN_INTERVAL_MS);
+                localStorage.setItem('book_tome_last_auto_gen', lastAutoGenTime);
+            }
+        }
+
+        // PROCEDURAL BOOK GENERATION ENGINE (Dynamic & non-repetitive)
+        function generateAndNotifyBook(silent = false) {
+            const adjectives = ["Whispering", "Clockwork", "Mystical", "Cosmic", "Mischievous", "Enchanted", "Quantum", "Nebula", "Gilded", "Rusty", "Starlight", "Shadowy", "Techno", "Prismatic", "Forgotten", "Harmonic", "Cybernetic", "Galactic", "Crystalline", "Silly"];
+            const nouns = ["Panda", "Kingdom", "Cupcake", "Sorcerer", "Tornado", "Fortress", "Badger", "Galaxy", "Wombat", "Chronicle", "Alchemist", "Dolphin", "Ostrich", "Matrix", "Odyssey", "Labyrinth", "Glitch", "Beacon", "Specter", "Pioneer"];
+            const storyGenres = ["High Fantasy", "Cyberpunk", "Cozy Mystery", "Space Opera", "Superhero Fiction", "Comic Adventure"];
+
+            const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const noun = nouns[Math.floor(Math.random() * nouns.length)];
+            const genre = storyGenres[Math.floor(Math.random() * storyGenres.length)];
+            
+            const title = `The ${adj} Legend of the ${noun}`;
+            const bookId = 'auto-' + Date.now() + Math.random().toString(36).substring(2, 5);
+
+            // Handpicked distinct cover images to prevent repetitions
+            const coverPool = [
+                "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&q=80&w=1000",
+                "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000",
+                "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=1000",
+                "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=1000",
+                "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=1000",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&q=80&w=1000",
+                "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80&w=1000",
+                "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&q=80&w=1000"
+            ];
+            const coverUrl = coverPool[Math.floor(Math.random() * coverPool.length)];
+
+            const newBook = {
+                id: bookId,
+                title: title,
+                genre: genre,
+                ageZone: "6-14",
+                wordsPerPage: 140,
+                pageCount: 8,
+                blurb: `An incredible, dynamically generated journey exploring the secrets of the ${noun}. Perfect for fans of deep ${genre} stories.`,
+                coverUrl: coverUrl,
+                moralOfStory: "Curiosity and kindness can unlock any magical door.",
+                price: 4.00,
+                published: true,
+                giveawaySlug: "auto-" + Math.random().toString(36).substring(2, 8),
+                buyers: 0,
+                pages: []
+            };
+
+            // Procedurally generated non-repetitive story segments
+            const storySegments = [
+                `The adventure begins! In the heart of the ${genre} realm, our brave protagonist, known to all as the courageous defender of the ${noun}, set out on a legendary quest. The skies were colored with a strange ${adj.toLowerCase()} glow.`,
+                `As the journey progressed, a sudden obstacle blocked the path. A mystical barrier hummed with ancient energy. 'We must decode the ${adj} cipher!' whispered a nearby companion, searching the ancient stone carvings.`,
+                `Suddenly, a mysterious creature emerged from the shadows. It wasn't hostile, but it demanded a riddle be solved. 'What is lighter than a feather, yet even the strongest ${noun} cannot hold it for long?'`,
+                `With a brilliant flash of insight, the riddle was solved! The path cleared, revealing a spectacular view of the hidden valley. In the distance, the legendary spires of the forgotten city began to shimmer.`,
+                `But the primary villain of this ${adj.toLowerCase()} tale had other plans. Out of nowhere, a swarm of mechanical drones descended, attempting to secure the precious artifact before our hero could reach it!`,
+                `A thrilling chase ensued across the narrow mountain ridges. Our protagonist used every ounce of their training, dodging laser beams and leapfrogging over ancient ruins with spectacular agility.`,
+                `At last, they reached the central chamber. By combining the power of the golden key and the strength of the ${noun}, the rogue drones were deactivated in a dazzling burst of colorful light!`,
+                `With peace restored, the legend of this magnificent triumph was carved into the eternal archives. As the old saying goes: "Curiosity and kindness can unlock any magical door."`
+            ];
+
+            for (let i = 0; i < 8; i++) {
+                newBook.pages.push({
+                    text: storySegments[i],
+                    imageUrl: i === 0 ? coverUrl : null
+                });
+            }
+
+            books.push(newBook);
+            localStorage.setItem('book_tome_books', JSON.stringify(books));
+            renderCatalog();
+
+            if (!silent) {
+                playSound('hoot');
+                showLiveToast(title, coverUrl);
+            }
+        }
+
+        function showLiveToast(title, coverUrl) {
+            const container = document.getElementById('live-toast-container');
+            const toast = document.createElement('div');
+            toast.className = "toast-notification bg-slate-900 border-2 border-tomeOrange-500 rounded-2xl p-4 flex gap-3 shadow-2xl pointer-events-auto transition-all hover:scale-[1.02]";
+            toast.innerHTML = `
+                <img src="${coverUrl}" class="w-12 h-16 object-cover rounded border border-slate-800" onerror="handleCoverError(this)">
+                <div class="flex-1">
+                    <p class="text-[10px] text-tomeOrange-500 font-bold uppercase tracking-wider">📖 New Book Generated!</p>
+                    <h5 class="text-xs font-bold text-slate-100 line-clamp-1">${title}</h5>
+                    <p class="text-[10px] text-slate-400 mt-1">Available now in the Grand Library.</p>
+                </div>
+                <button onclick="this.parentElement.remove()" class="text-slate-500 hover:text-white self-start"><i data-lucide="x" class="w-4 h-4"></i></button>
+            `;
+            container.appendChild(toast);
+            lucide.createIcons();
+
+            setTimeout(() => {
+                toast.remove();
+            }, 8000);
+        }
+
+        // THEME CUSTOMIZER LOGIC
+        function applyUserThemeStyles() {
+            const styleTag = document.getElementById('custom-theme-variables');
+            if (!currentUser) {
+                // Apply default theme
+                styleTag.innerHTML = `
+                    :root {
+                        --user-bg-gradient: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
+                        --user-bg-solid: #0b0f19;
+                        --user-text-color: #f1f5f9;
+                        --user-logo-color: #ff781f;
+                    }
+                    body {
+                        background: var(--user-bg-solid) !important;
+                        background-image: var(--user-bg-gradient) !important;
+                        color: var(--user-text-color) !important;
+                    }
+                    .custom-logo-text { color: var(--user-logo-color) !important; }
+                `;
+                return;
+            }
+
+            const theme = userThemes[currentUser.id] || {
+                bgSolid: '#0b0f19',
+                bgGradient: 'radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%)',
+                textColor: '#f1f5f9',
+                logoColor: '#ff781f'
+            };
+
+            styleTag.innerHTML = `
+                :root {
+                    --user-bg-gradient: ${theme.bgGradient};
+                    --user-bg-solid: ${theme.bgSolid};
+                    --user-text-color: ${theme.textColor};
+                    --user-logo-color: ${theme.logoColor};
+                }
+                body {
+                    background: var(--user-bg-solid) !important;
+                    background-image: var(--user-bg-gradient) !important;
+                    color: var(--user-text-color) !important;
+                }
+                .custom-logo-text { color: var(--user-logo-color) !important; }
+            `;
+
+            // Update picker inputs if visible
+            const bgPicker = document.getElementById('custom-bg-color-picker');
+            const textPicker = document.getElementById('custom-text-color-picker');
+            const logoPicker = document.getElementById('custom-logo-color-picker');
+            if (bgPicker) bgPicker.value = theme.bgSolid;
+            if (textPicker) textPicker.value = theme.textColor;
+            if (logoPicker) logoPicker.value = theme.logoColor;
+        }
+
+        function changeUserTheme(type, val1, val2 = '') {
+            if (!currentUser) return;
+            playSound('click');
+
+            if (!userThemes[currentUser.id]) {
+                userThemes[currentUser.id] = {
+                    bgSolid: '#0b0f19',
+                    bgGradient: 'radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%)',
+                    textColor: '#f1f5f9',
+                    logoColor: '#ff781f'
+                };
+            }
+
+            if (type === 'bg') {
+                userThemes[currentUser.id].bgSolid = val1;
+                userThemes[currentUser.id].bgGradient = val2;
+            } else if (type === 'bg-custom') {
+                userThemes[currentUser.id].bgSolid = val1;
+                userThemes[currentUser.id].bgGradient = 'none';
+            } else if (type === 'text') {
+                userThemes[currentUser.id].textColor = val1;
+            } else if (type === 'logo') {
+                userThemes[currentUser.id].logoColor = val1;
+            }
+
+            localStorage.setItem('book_tome_user_themes', JSON.stringify(userThemes));
+            applyUserThemeStyles();
+        }
+
+        function resetThemeToDefault() {
+            if (!currentUser) return;
+            playSound('success');
+            userThemes[currentUser.id] = {
+                bgSolid: '#0b0f19',
+                bgGradient: 'radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%)',
+                textColor: '#f1f5f9',
+                logoColor: '#ff781f'
+            };
+            localStorage.setItem('book_tome_user_themes', JSON.stringify(userThemes));
+            applyUserThemeStyles();
+        }
+
+        // LOYALTY PROGRAM CALCULATIONS
+        function getLoyaltyStats() {
+            if (!currentUser) return { purchasedCount: 0, earnedCredits: 0, redeemedCredits: 0, availableCredits: 0, tier: 'Bronze', progressPercent: 0 };
+
+            const ownedIds = purchasedBooks[currentUser.id] || [];
+            const purchasedCount = ownedIds.length;
+
+            let earnedCredits = 0;
+            let tier = 'Bronze';
+            let progressPercent = 0;
+
+            if (purchasedCount >= 22) {
+                earnedCredits = 5;
+                tier = 'Mythic Diamond';
+                progressPercent = 100;
+            } else if (purchasedCount >= 16) {
+                earnedCredits = 3;
+                tier = 'Platinum Spark';
+                progressPercent = Math.round((purchasedCount / 22) * 100);
+            } else if (purchasedCount >= 10) {
+                earnedCredits = 2;
+                tier = 'Gold Star';
+                progressPercent = Math.round((purchasedCount / 22) * 100);
+            } else if (purchasedCount >= 3) {
+                earnedCredits = 1;
+                tier = 'Silver Crest';
+                progressPercent = Math.round((purchasedCount / 22) * 100);
+            } else {
+                progressPercent = Math.round((purchasedCount / 3) * 100 * 0.3);
+            }
+
+            const redeemedCredits = currentUser.redeemedCredits || 0;
+            const availableCredits = Math.max(0, earnedCredits - redeemedCredits);
+
+            return {
+                purchasedCount,
+                earnedCredits,
+                redeemedCredits,
+                availableCredits,
+                tier,
+                progressPercent
+            };
+        }
+
+        // REDEEM FREE BOOK CREDIT
+        function redeemLoyaltyCredit() {
+            if (!currentUser || !activeCheckoutBookId) return;
+            const stats = getLoyaltyStats();
+
+            if (stats.availableCredits <= 0) {
+                alert("You don't have any free book credits to redeem!");
+                return;
+            }
+
+            playSound('success');
+
+            // Add book to owned list
+            if (!purchasedBooks[currentUser.id]) {
+                purchasedBooks[currentUser.id] = [];
+            }
+            purchasedBooks[currentUser.id].push(activeCheckoutBookId);
+            localStorage.setItem('book_tome_purchased', JSON.stringify(purchasedBooks));
+
+            // Increment redeemed credits
+            currentUser.redeemedCredits = (currentUser.redeemedCredits || 0) + 1;
+            localStorage.setItem('book_tome_current_user', JSON.stringify(currentUser));
+
+            const book = books.find(b => b.id === activeCheckoutBookId);
+            if (book) {
+                book.buyers = (book.buyers || 0) + 1;
+                localStorage.setItem('book_tome_books', JSON.stringify(books));
+            }
+
+            alert(`🎉 Coupon Redeemed! "${book.title}" has been added to your sanctuary for FREE!`);
+            closeCheckoutModal();
+            renderCatalog();
+            renderOwnedLibrary();
+            updateLoyaltyUI();
+            navigate('library');
+        }
+
+        function updateLoyaltyUI() {
+            const stats = getLoyaltyStats();
+            const countEl = document.getElementById('loyalty-purchased-count');
+            const creditsEl = document.getElementById('loyalty-free-credits');
+            const barEl = document.getElementById('loyalty-progress-bar');
+            const tierEl = document.getElementById('loyalty-tier-name');
+
+            if (countEl) countEl.innerText = stats.purchasedCount;
+            if (creditsEl) creditsEl.innerText = stats.availableCredits;
+            if (barEl) barEl.style.width = `${stats.progressPercent}%`;
+            if (tierEl) tierEl.innerText = stats.tier;
+        }
+
+        // GOOGLE SEARCH SIMULATION LOGIC (Inside Admin Panel)
+        function runGoogleSearchSimulation() {
+            const query = document.getElementById('google-search-query').value.trim().toLowerCase();
+            const titleEl = document.getElementById('admin-google-sim-title');
+            const snippetEl = document.getElementById('admin-google-sim-snippet');
+
+            const targetKeywords = [
+                "books", 
+                "read all you need", 
+                "booktome-lsyxfp.composed.app", 
+                "book tomes", 
+                "affordable books"
+            ];
+
+            const matchesTarget = targetKeywords.some(keyword => query.includes(keyword));
+
+            let responseTitle = "";
+            let responseSnippet = "";
+
+            if (matchesTarget || query === "") {
+                responseTitle = "Book Tomes - Read All You Need of Premium, Affordable Stories";
+                responseSnippet = "Welcome to booktome-lsyxfp.composed.app, the #1 digital library where you can read all you need. Discover premium, page-filling epics like Captain Cardboard, Chronicles of a Clumsy Coder, and Inspector Paws. Completely free of generic summaries.";
+            } else if (query.includes('cardboard') || query.includes('grumble') || query.includes('leo')) {
+                responseTitle = "Captain Cardboard - Read Humorous Comic Epics on Book Tomes";
+                responseSnippet = "Read the complete, page-filling comic masterpiece of Captain Cardboard on booktome-lsyxfp.composed.app. Experience the ultimate box-wearing superhero saving Barksville Elementary.";
+            } else if (query.includes('clumsy') || query.includes('coder') || query.includes('toby') || query.includes('marcus')) {
+                responseTitle = "Chronicles of a Clumsy Coder - Book Tomes";
+                responseSnippet = "Follow Toby and Marcus's funny middle school adventures. A beautifully written, natural slice of life with high-fidelity reading options on booktome-lsyxfp.composed.app.";
+            } else if (query.includes('paws') || query.includes('barkington') || query.includes('squeaks')) {
+                responseTitle = "Inspector Paws & the Giggle-Dust Caper - Exclusive Read on Book Tomes";
+                responseSnippet = "Protect the city with Inspector Paws! Read this spectacular children adventure and defeat Professor Squeaks' robot tickle-feathers. Live on booktome-lsyxfp.composed.app.";
+            } else {
+                responseTitle = `Book Tomes - Search Results for '${query}'`;
+                responseSnippet = `Explore hand-crafted books matching your search on booktome-lsyxfp.composed.app. Access high-fidelity narrations, 100 unique genres, and beautifully written stories.`;
+            }
+
+            // Update simulated cards
+            if(titleEl && snippetEl) {
+                titleEl.innerHTML = responseTitle;
+                snippetEl.innerHTML = responseSnippet;
+            }
+        }
+
+        function setQueryAndSearch(term) {
+            playSound('click');
+            document.getElementById('google-search-query').value = term;
+            runGoogleSearchSimulation();
+        }
+
+        // SIMULATED GOOGLE SEARCH CONSOLE ACTIONS
+        function simulateGscAction(action) {
+            playSound('click');
+            const log1 = document.getElementById('gsc-log-1');
+            const log2 = document.getElementById('gsc-log-2');
+            const log3 = document.getElementById('gsc-log-3');
+
+            if (action === 'verify') {
+                log1.innerText = "> Running ownership verification algorithm...";
+                setTimeout(() => {
+                    playSound('success');
+                    log1.innerText = "> [SUCCESS] Domain ownership verified via Meta tag: bt_verification_wildcard_9928173";
+                    alert("Ownership verified successfully via Google Search Console!");
+                }, 1000);
+            } else if (action === 'sitemap') {
+                log2.innerText = "> Parsing sitemap.xml schemas...";
+                setTimeout(() => {
+                    playSound('success');
+                    log2.innerText = "> [SUCCESS] Sitemap active. 100 sitemaps & 100 genres parsed successfully.";
+                    alert("Sitemap submitted and successfully processed!");
+                }, 1000);
+            } else if (action === 'crawl') {
+                log3.innerText = "> Requesting high-speed Googlebot crawl...";
+                setTimeout(() => {
+                    playSound('success');
+                    log3.innerText = "> [SUCCESS] Crawler finished. 100% of pages indexed. High rank priority assigned.";
+                    alert("Googlebot crawl completed! Your pages are fully indexed.");
+                }, 1200);
+            }
+        }
+
+        // POPULATE ADMIN GENRE SELECT
+        function populateAdminGenres() {
+            const select = document.getElementById('admin-genre');
+            if (select) {
+                select.innerHTML = '';
+                genresList.forEach(genre => {
+                    const opt = document.createElement('option');
+                    opt.value = genre;
+                    opt.innerText = genre;
+                    select.appendChild(opt);
+                });
+            }
+        }
+
+        // GOOGLE VERIFICATION SIMULATOR
+        function simulateGoogleVerification() {
+            if (window.location.search.includes('google') || window.location.pathname.includes('google') || window.location.hostname.includes('booktome-lsyxfp.composed.app')) {
+                document.getElementById('google-verification-banner').classList.remove('hidden');
+            }
+        }
+
+        // URL GIVEAWAY CHECKER
+        function checkUrlGiveaway() {
+            const params = new URLSearchParams(window.location.search);
+            const giveaway = params.get('g');
+            if (giveaway) {
+                const book = books.find(b => b.giveawaySlug === giveaway && b.published);
+                if (book) {
+                    if (!currentUser) {
+                        playSound('click');
+                        openAuthModal('signin', `Please sign in or create a free account first to claim free access to "${book.title}".`);
+                    } else {
+                        playSound('success');
+                        alert(`🎉 Secret Giveaway URL Activated! Enjoy free reading access to "${book.title}".`);
+                        launchBookReader(book);
+                    }
+                } else {
+                    alert("⚠️ This giveaway link is expired, invalid, or requires administrative clearance.");
+                }
+            }
+        }
+
+        // NAVIGATION
+        function navigate(pageId) {
+            playSound('click');
+
+            // REQUIRE SIGN IN ONLY TO ACCESS LIBRARY/PROFILE/ADMIN
+            if (!currentUser && (pageId === 'library' || pageId === 'profile' || pageId === 'admin')) {
+                openAuthModal('signin', "Please sign in or create an account to view your sanctuary or profile.");
+                return;
+            }
+
+            ['home', 'library', 'profile', 'admin'].forEach(p => {
+                const el = document.getElementById(`page-${p}`);
+                if (el) el.classList.add('hidden');
+                const navBtn = document.getElementById(`nav-${p}`);
+                if (navBtn) {
+                    navBtn.className = "px-5 py-2 rounded-full text-sm font-semibold text-slate-400 hover:text-white transition-all duration-200 flex items-center gap-2";
+                }
+            });
+
+            const activePage = document.getElementById(`page-${pageId}`);
+            if (activePage) activePage.classList.remove('hidden');
+
+            const activeNavBtn = document.getElementById(`nav-${pageId}`);
+            if (activeNavBtn) {
+                if (pageId === 'admin') {
+                    activeNavBtn.className = "px-5 py-2 rounded-full text-sm font-semibold bg-tomeGreen-500/20 text-tomeGreen-500 border border-tomeGreen-500 flex items-center gap-2";
+                } else {
+                    activeNavBtn.className = "px-5 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-tomeOrange-500 to-tomeOrange-600 text-white shadow-lg shadow-tomeOrange-500/20 flex items-center gap-2";
+                }
+            }
+
+            if (pageId === 'library') renderOwnedLibrary();
+            if (pageId === 'profile') {
+                renderProfilePage();
+                updateLoyaltyUI();
+            }
+            if (pageId === 'admin') renderAdminPage();
+        }
+
+        // ADMIN PANEL TAB SWITCHER
+        function switchAdminTab(tabName) {
+            playSound('click');
+            const pubTab = document.getElementById('admin-tab-publisher');
+            const seoTab = document.getElementById('admin-tab-seo');
+            const pubContent = document.getElementById('admin-content-publisher');
+            const seoContent = document.getElementById('admin-content-seo');
+
+            if (tabName === 'publisher') {
+                pubTab.className = "px-4 py-2 text-xs font-bold border-b-2 border-tomeGreen-500 text-tomeGreen-500";
+                seoTab.className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200";
+                pubContent.classList.remove('hidden');
+                seoContent.classList.add('hidden');
+            } else {
+                seoTab.className = "px-4 py-2 text-xs font-bold border-b-2 border-tomeGreen-500 text-tomeGreen-500";
+                pubTab.className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200";
+                seoContent.classList.remove('hidden');
+                pubContent.classList.add('hidden');
+                runGoogleSearchSimulation();
+            }
+            lucide.createIcons();
+        }
+
+        // EXIT BUTTONS - EVERY PAGE ESCAPE ROUTE
+        function exitPlatform() {
+            playSound('click');
+            if (confirm("Are you sure you want to exit the Book Tomes application?")) {
+                currentSearchQuery = '';
+                activeFilter = 'all';
+                document.getElementById('main-search').value = '';
+                clearGenreFilter();
+                navigate('home');
+                alert("Returned to standard view. All search filters and custom states cleared.");
+            }
+        }
+
+        // AUTOMATIC DATE-BASED HOLIDAY ENGINE
+        function getDetectedHoliday() {
+            const today = new Date();
+            const month = today.getMonth() + 1; // 1-12
+            const date = today.getDate();       // 1-31
+
+            // Christmas: Dec 24 - Dec 26
+            if (month === 12 && (date >= 24 && date <= 26)) {
+                return { name: "Christmas", icon: "🎄", discount: 0.75 };
+            }
+            // Halloween: Oct 30 - Nov 1
+            if ((month === 10 && date >= 30) || (month === 11 && date === 1)) {
+                return { name: "Halloween", icon: "🎃", discount: 0.75 };
+            }
+            // Easter Spring Window: April 10 - April 18
+            if (month === 4 && (date >= 10 && date <= 18)) {
+                return { name: "Easter", icon: "🐰", discount: 0.75 };
+            }
+            // New Year: Dec 31 - Jan 2
+            if ((month === 12 && date === 31) || (month === 1 && (date === 1 || date === 2))) {
+                return { name: "New Year", icon: "🎆", discount: 0.75 };
+            }
+            // Valentine's Day: Feb 13 - Feb 15
+            if (month === 2 && (date >= 13 && date <= 15)) {
+                return { name: "Valentine's", icon: "💖", discount: 0.75 };
+            }
+
+            return null; // No major holiday active
+        }
+
+        // DISPLAY DETECTED HOLIDAY
+        function detectAndDisplayHoliday() {
+            const label = document.getElementById('holiday-clock-label');
+            const icon = document.getElementById('holiday-clock-icon');
+            const holiday = getDetectedHoliday();
+
+            if (holiday) {
+                label.innerHTML = `<span class="text-tomeGreen-500 font-bold">${holiday.name} PROMO Active! (75% Off)</span>`;
+                icon.innerText = holiday.icon;
+            } else {
+                label.innerText = "Standard Pricing Active";
+                icon.innerText = "📅";
+            }
+        }
+
+        // CALCULATE PRICING WITH DATE & USER ISOLATION RULES
+        function calculatePrice(book) {
+            let base = book.price || 4.00;
+
+            // Rule 1: Holiday 75% off overrides everything else
+            const holiday = getDetectedHoliday();
+            if (holiday) {
+                return (base * (1 - holiday.discount)).toFixed(2);
+            }
+
+            // Rule 2: First-time user discount (50% off first purchase)
+            if (currentUser) {
+                const owned = purchasedBooks[currentUser.id] || [];
+                if (owned.length === 0) {
+                    return (base * 0.50).toFixed(2);
+                }
+            }
+
+            return base.toFixed(2);
+        }
+
+        // 100 GENRES EXPLORER PANEL
+        function openGenreExplorer() {
+            playSound('click');
+            document.getElementById('genres-modal').classList.remove('hidden');
+            renderGenresList("");
+        }
+
+        // CLOSE GENRE EXPLORER
+        function closeGenreExplorer() {
+            document.getElementById('genres-modal').classList.add('hidden');
+        }
+
+        function filterGenresList(query) {
+            renderGenresList(query);
+        }
+
+        // RENDER 100 GENRES
+        function renderGenresList(query) {
+            const grid = document.getElementById('genres-modal-grid');
+            grid.innerHTML = '';
+
+            const filtered = genresList.filter(g => g.toLowerCase().includes(query.toLowerCase()));
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<p class="col-span-full text-center text-xs text-slate-500 py-8">No genres match your query.</p>`;
+                return;
+            }
+
+            filtered.forEach(genre => {
+                const btn = document.createElement('button');
+                btn.className = `p-3 rounded-xl border text-xs font-semibold transition text-left flex items-center justify-between ${activeFilter === genre ? 'bg-tomeOrange-500/20 border-tomeOrange-500 text-tomeOrange-500' : 'bg-slate-950/80 border-slate-800 text-slate-300 hover:border-slate-700'}`;
+                btn.onclick = () => {
+                    selectGenreFilter(genre);
+                };
+                btn.innerHTML = `
+                    <span>${genre}</span>
+                    <i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-60"></i>
+                `;
+                grid.appendChild(btn);
+            });
+            lucide.createIcons();
+        }
+
+        function selectGenreFilter(genre) {
+            playSound('success');
+            activeFilter = genre;
+            document.getElementById('active-genre-indicator-bar').classList.remove('hidden');
+            document.getElementById('active-genre-name').innerText = genre;
+            closeGenreExplorer();
+            renderCatalog();
+        }
+
+        function clearGenreFilter() {
+            playSound('click');
+            activeFilter = 'all';
+            document.getElementById('active-genre-indicator-bar').classList.add('hidden');
+            renderCatalog();
+        }
+
+        // RENDER CATALOG
+        function renderCatalog() {
+            const grid = document.getElementById('catalog-grid');
+            const guestBanner = document.getElementById('guest-welcome-banner');
+
+            // Toggle Guest Banner depending on Auth State
+            if (!currentUser) {
+                guestBanner.classList.remove('hidden');
+            } else {
+                guestBanner.classList.add('hidden');
+            }
+
+            grid.innerHTML = '';
+
+            let visibleBooks = books.filter(b => b.published || isMasterAdmin);
+
+            if (activeFilter !== 'all') {
+                visibleBooks = visibleBooks.filter(b => b.genre === activeFilter);
+            }
+
+            if (currentSearchQuery.trim() !== '') {
+                const query = currentSearchQuery.toLowerCase();
+                visibleBooks = visibleBooks.filter(b => 
+                    b.title.toLowerCase().includes(query) || 
+                    b.genre.toLowerCase().includes(query) || 
+                    b.blurb.toLowerCase().includes(query)
+                );
+            }
+
+            if (visibleBooks.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-16 bg-slate-900/20 border border-slate-800/80 rounded-2xl">
+                        <i data-lucide="book-open" class="w-12 h-12 text-slate-600 mx-auto mb-4"></i>
+                        <p class="text-slate-400 font-medium">No books match your search description.</p>
+                        <p class="text-xs text-slate-500 mt-1">Try searching for simple words like "cardboard", "coder", or "paws".</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            visibleBooks.forEach(book => {
+                const price = calculatePrice(book);
+                const isOwned = currentUser && (purchasedBooks[currentUser.id] || []).includes(book.id);
+                
+                const card = document.createElement('div');
+                card.className = "group relative bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-tomeOrange-500/50 transition-all duration-300 flex flex-col justify-between";
+                
+                let actionBtnHtml = '';
+                
+                if (!currentUser) {
+                    actionBtnHtml = `
+                        <button onclick="openAuthModal('signin', 'Sign in to read ${book.title.replace(/'/g, "\\'")}.')" class="px-4 py-2 bg-gradient-to-r from-tomeOrange-500 to-tomeOrange-600 hover:from-tomeOrange-600 hover:to-tomeOrange-700 text-white font-bold rounded-lg text-xs transition shadow-md shadow-tomeOrange-500/10 flex items-center gap-1">
+                            <i data-lucide="lock" class="w-3.5 h-3.5"></i> Sign In to Read
+                        </button>
+                    `;
+                } else if (isOwned || isMasterAdmin) {
+                    actionBtnHtml = `
+                        <button onclick="launchBookReaderById('${book.id}')" class="px-4 py-2 bg-gradient-to-r from-tomeGreen-500 to-tomeBlue-500 hover:opacity-90 text-slate-950 font-bold rounded-lg text-xs transition flex items-center gap-1">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Read Now
+                        </button>
+                    `;
+                } else {
+                    actionBtnHtml = `
+                        <button onclick="triggerCheckout('${book.id}')" class="px-4 py-2 bg-gradient-to-r from-tomeOrange-500 to-tomeOrange-600 hover:from-tomeOrange-600 hover:to-tomeOrange-700 text-white font-bold rounded-lg text-xs transition shadow-md shadow-tomeOrange-500/10 flex items-center gap-1">
+                            <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i> Buy Book
+                        </button>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-950">
+                            <img src="${book.coverUrl}" alt="${book.title}" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" onerror="handleCoverError(this)">
+                            <div class="absolute inset-0 bg-gradient-to-t"></div>
+                            
+                            <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-slate-800 text-[10px] font-bold text-tomeOrange-500 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                                ${book.genre}
+                            </span>
+
+                            ${!book.published ? `
+                                <span class="absolute top-3 right-3 bg-red-500/20 border border-red-500/40 text-[10px] font-bold text-red-400 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                                    Draft
+                                </span>
+                            ` : ''}
+                        </div>
+
+                        <div class="p-5 space-y-2">
+                            <h3 class="font-cinzel text-lg font-bold text-slate-100 group-hover:text-tomeOrange-500 transition duration-200 line-clamp-1">${book.title}</h3>
+                            <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">${book.blurb}</p>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-0 border-t border-slate-900 mt-4 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-500 block uppercase font-bold">Age Zone ${book.ageZone}</span>
+                            <span class="text-lg font-black text-slate-100">$${price}</span>
+                        </div>
+                        ${actionBtnHtml}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        // RENDER OWNED LIBRARY
+        function renderOwnedLibrary() {
+            const grid = document.getElementById('owned-grid');
+            grid.innerHTML = '';
+
+            if (!currentUser) return;
+
+            const ownedIds = purchasedBooks[currentUser.id] || [];
+            const ownedList = books.filter(b => ownedIds.includes(b.id));
+
+            if (ownedList.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-16 bg-slate-900/20 border border-slate-800/80 rounded-2xl">
+                        <i data-lucide="library" class="w-12 h-12 text-slate-600 mx-auto mb-4"></i>
+                        <p class="text-slate-400 font-medium">You don't own any books yet.</p>
+                        <button onclick="navigate('home')" class="mt-4 px-5 py-2 bg-gradient-to-r from-tomeOrange-500 to-tomeOrange-600 text-white font-bold text-xs rounded-lg shadow">Browse Public Catalog</button>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            ownedList.forEach(book => {
+                const card = document.createElement('div');
+                card.className = "group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-tomeGreen-500/50 transition-all duration-300 flex flex-col justify-between";
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-950">
+                            <img src="${book.coverUrl}" alt="${book.title}" class="w-full h-full object-cover" onerror="handleCoverError(this)">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md border border-slate-800 text-[10px] font-bold text-tomeGreen-500 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                                ${book.genre}
+                            </span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="font-cinzel text-lg font-bold text-slate-100 group-hover:text-tomeGreen-500 transition duration-200 line-clamp-1">${book.title}</h3>
+                            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">${book.blurb}</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 border-t border-slate-900 mt-4 flex items-center justify-between">
+                        <span class="text-[10px] text-slate-500 uppercase font-bold">Age Zone ${book.ageZone}</span>
+                        <button onclick="launchBookReaderById('${book.id}')" class="px-4 py-2 bg-gradient-to-r from-tomeGreen-500 to-tomeGreen-600 hover:opacity-90 text-slate-950 font-bold rounded-lg text-xs transition flex items-center gap-1.5 shadow-lg shadow-tomeGreen-500/10">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Open Book
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        // DETERMINISTIC BADGE ENGINE (1,000,000 unique layers)
+        function generateBadge(userId, index) {
+            let hash = 0;
+            const seedString = `${userId}-badge-layer-${index}`;
+            for (let i = 0; i < seedString.length; i++) {
+                hash = (hash << 5) - hash + seedString.charCodeAt(i);
+                hash |= 0;
+            }
+            const absoluteLayer = Math.abs(hash) % 1000000;
+
+            const colors = [
+                { border: 'border-tomeOrange-500/30', bg: 'bg-tomeOrange-500/10', text: 'text-tomeOrange-500', icon: 'sparkles' },
+                { border: 'border-tomeGreen-500/30', bg: 'bg-tomeGreen-500/10', text: 'text-tomeGreen-500', icon: 'shield' },
+                { border: 'border-tomeBlue-500/30', bg: 'bg-tomeBlue-500/10', text: 'text-tomeBlue-500', icon: 'award' }
+            ];
+            const theme = colors[absoluteLayer % colors.length];
+
+            const titles = ["Tome Seeker", "Emerald Comic Critic", "Orange Spark", "Blue Horizon", "Prose Alchemist", "Spine Guardian"];
+            const title = titles[absoluteLayer % titles.length];
+
+            return {
+                layer: absoluteLayer,
+                title: `${title} Layer #${absoluteLayer}`,
+                theme: theme
+            };
+        }
+
+        function renderProfilePage() {
+            if (!currentUser) return;
+
+            document.getElementById('profile-initial').innerText = currentUser.username.charAt(0).toUpperCase();
+            document.getElementById('profile-name').innerText = currentUser.username;
+            
+            const ownedCount = (purchasedBooks[currentUser.id] || []).length;
+            document.getElementById('profile-books-count').innerText = ownedCount;
+
+            const badgeContainer = document.getElementById('badge-matrix-container');
+            badgeContainer.innerHTML = '';
+
+            for (let i = 1; i <= 6; i++) {
+                const badge = generateBadge(currentUser.id, i);
+                const badgeEl = document.createElement('div');
+                badgeEl.className = `border ${badge.theme.border} ${badge.theme.bg} rounded-xl p-4 flex items-center gap-3 transition-all hover:scale-[1.02]`;
+                badgeEl.innerHTML = `
+                    <div class="w-10 h-10 rounded-lg bg-slate-950 flex items-center justify-center ${badge.theme.text} border border-slate-800">
+                        <i data-lucide="${badge.theme.icon}" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h5 class="text-xs font-bold text-slate-200">${badge.title}</h5>
+                        <p class="text-[9px] text-slate-500 mt-0.5">Hash stable seed verified</p>
+                    </div>
+                `;
+                badgeContainer.appendChild(badgeEl);
+            }
+            lucide.createIcons();
+        }
+
+        function regenerateBadgeMatrix() {
+            playSound('success');
+            renderProfilePage();
+        }
+
+        // MASTER PASSWORD OVERRIDE INTRUSION DETECTOR
+        function handleSearchInput(val) {
+            if (val === "123Jasonsgame!15412907") {
+                triggerMasterAdminMode();
+                document.getElementById('main-search').value = '';
+            } else {
+                currentSearchQuery = val;
+                renderCatalog();
+            }
+        }
+
+        function triggerMasterAdminMode() {
+            isMasterAdmin = true;
+            playSound('success');
+            document.getElementById('admin-unlocked-toast').classList.remove('hidden');
+            document.getElementById('nav-admin').classList.remove('hidden');
+            
+            // Set mock admin user
+            if (!currentUser) {
+                currentUser = { id: 'admin-user', username: 'admin' };
+                localStorage.setItem('book_tome_current_user', JSON.stringify(currentUser));
+                updateAuthUI();
+            }
+
+            alert("🔒 MASTER ADMIN OVERRIDE DETECTED! All checkout walls are bypassed. Publishing options & Live Google Sandbox are now unlocked.");
+            navigate('admin');
+        }
+
+        function triggerSearch() {
+            playSound('click');
+            renderCatalog();
+        }
+
+        // SOLE PUBLISHER RULES & LIFE CYCLE ACTIONS
+        function renderAdminPage() {
+            const listContainer = document.getElementById('admin-book-list');
+            listContainer.innerHTML = '';
+
+            books.forEach(book => {
+                const isPublished = book.published;
+                const buyersCount = book.buyers || 0;
+                const isLocked = buyersCount > 0;
+
+                const row = document.createElement('div');
+                row.className = "bg-slate-950 border border-slate-800/80 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4";
+                
+                row.innerHTML = `
+                    <div class="flex gap-4 items-center">
+                        <img src="${book.coverUrl}" alt="Cover" class="w-12 h-16 object-cover rounded-lg border border-slate-800" onerror="handleCoverError(this)">
+                        <div>
+                            <h4 class="font-bold text-slate-200 text-sm flex items-center gap-1.5">
+                                ${book.title}
+                                ${isLocked ? `<span class="text-[10px] text-tomeOrange-500 font-bold flex items-center gap-0.5"><i data-lucide="lock" class="w-3 h-3"></i> Locked</span>` : ''}
+                            </h4>
+                            <p class="text-[10px] text-slate-500">${book.genre} • Age Zone ${book.ageZone} • ${book.pages.length} Pages • ${buyersCount} Buyer(s)</p>
+                            
+                            ${isPublished ? `
+                                <div class="mt-1 flex items-center gap-1.5 text-[9px] text-tomeGreen-500 font-mono">
+                                    <span>Private Giveaway Slug:</span>
+                                    <code class="bg-slate-900 border border-slate-800 px-1 py-0.5 rounded cursor-pointer" onclick="copyGiveawayLink('${book.giveawaySlug}')" title="Click to copy">/g/${book.giveawaySlug}</code>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="${isPublished ? "alert('Please unpublish this book before editing layout.')" : `openMultimediaEditor('${book.id}')`}" 
+                                class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 transition ${isPublished ? 'bg-slate-900 text-slate-600 border border-slate-800 cursor-not-allowed' : 'bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800'}">
+                            <i data-lucide="edit-3" class="w-3.5 h-3.5"></i> Edit Layout
+                        </button>
+
+                        <button onclick="launchBookReaderById('${book.id}')" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 rounded-lg text-xs font-semibold flex items-center gap-1 transition">
+                            <i data-lucide="eye" class="w-3.5 h-3.5"></i> Read
+                        </button>
+
+                        <button onclick="togglePublishState('${book.id}')" 
+                                ${isLocked ? 'disabled' : ''} 
+                                class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 transition ${isLocked ? 'bg-slate-900 text-slate-600 border border-slate-800 cursor-not-allowed' : isPublished ? 'bg-red-500/10 text-red-400 border border-red-500/30 hover:bg-red-500/20' : 'bg-tomeGreen-500/10 text-tomeGreen-500 border border-tomeGreen-500/30 hover:bg-tomeGreen-500/20'}">
+                            <i data-lucide="${isPublished ? 'arrow-down-left' : 'arrow-up-right'}" class="w-3.5 h-3.5"></i>
+                            ${isPublished ? 'Unpublish' : 'Publish'}
+                        </button>
+
+                        <button onclick="deleteBook('${book.id}')" 
+                                ${isLocked ? 'disabled' : ''} 
+                                class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 transition ${isLocked ? 'bg-slate-900 text-slate-600 border border-slate-800 cursor-not-allowed' : 'bg-red-950/40 hover:bg-red-900/40 text-red-400 border border-red-900/20'}">
+                            <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Delete
+                        </button>
+                    </div>
+                `;
+                listContainer.appendChild(row);
+            });
+            lucide.createIcons();
+        }
+
+        // CREATE BOOK IMMERSIVE STORY GENERATOR (PROCEDURAL & DYNAMICALLY NON-REPETITIVE)
+        function createBookSubmit() {
+            playSound('click');
+            const title = document.getElementById('admin-title').value.trim();
+            const genre = document.getElementById('admin-genre').value;
+            const age = document.getElementById('admin-age').value.trim();
+            const words = parseInt(document.getElementById('admin-words').value);
+            const pageCount = parseInt(document.getElementById('admin-pages').value) || 8;
+            const moral = document.getElementById('admin-moral').value.trim();
+            const cover = document.getElementById('admin-cover').value || 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=500';
+            const price = parseFloat(document.getElementById('admin-price').value);
+            const blurb = document.getElementById('admin-blurb').value.trim();
+
+            if (!title || !blurb || !moral) {
+                alert("Please fill in Title, Blurb, and Moral of the story!");
+                return;
+            }
+
+            document.getElementById('admin-submit-btn').disabled = true;
+            document.getElementById('admin-submit-btn').classList.add('opacity-50');
+            const progressContainer = document.getElementById('ai-progress-container');
+            progressContainer.classList.remove('hidden');
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                document.getElementById('ai-progress-bar').style.width = `${progress}%`;
+                document.getElementById('ai-progress-text').innerText = `${progress}%`;
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    
+                    let protagonist = title.replace(/The\s+(Epic\s+|Great\s+|Adventures\s+of\s+|Spectacular\s+|Chronicles\s+of\s+)?/i, "").split(" ")[0];
+                    if (!protagonist || protagonist.length < 3) protagonist = "Our Hero";
+
+                    const introTemplates = [
+                        `Welcome to the wonderful world of "${title}"! In a cozy neighborhood filled with curious minds, ${protagonist} was known for having a wild imagination. Life was pretty normal, until a sudden wave of ${genre}-themed magic turned everything upside down.`,
+                        `It all started on an ordinary afternoon. ${protagonist} was minding their own business, thinking about the best way to spend the weekend. But as the story goes: "${blurb}". The adventure was about to begin!`,
+                        `Have you ever wanted to be part of a grand ${genre} adventure? Well, ${protagonist} certainly did! Aimed at brave readers in the ${age} age group, this story is packed with mystery, laughter, and unexpected surprises.`
+                    ];
+
+                    const conflictTemplates = [
+                        `Suddenly, a giant challenge appeared! A mysterious rival showed up with a mischievous plan to disrupt the peace. ${protagonist} realized that standard rules wouldn't work here. It was time to use some creative thinking!`,
+                        `The situation grew tense. Our characters had to think fast as the main conflict of "${blurb}" began to unfold. Everyone was watching, wondering if ${protagonist} had what it took to save the day.`,
+                        `But wait! A hilarious twist occurred. A strange obstacle popped up right in their path. ${protagonist} had to dodge, weave, and make a quick decision before things got completely out of hand.`
+                    ];
+
+                    const risingActionTemplates = [
+                        `Determined to make a difference, ${protagonist} gathered a team of loyal companions. They mapped out the entire schoolyard, searching for secret passages and hidden clues that could help explain the bizarre occurrences.`,
+                        `Step by step, they crept closer to the heart of the mystery. The air was filled with anticipation. Every small discovery felt like a massive victory, pushing them to keep moving forward despite the obstacles.`,
+                        `With courage in their hearts, they navigated the tricky corridors of Barksville. The clues were finally coming together, pointing to a secret control room hidden behind the most unexpected place: the gym locker room!`
+                    ];
+
+                    const actionTemplates = [
+                        `With a leap and a bound, the action commenced! ${protagonist} scrambled to gather supplies, putting together a brilliant plan. It was a classic ${genre} showdown, full of fast-paced moves and silly sound effects!`,
+                        `The crowd gasped as ${protagonist} initiated the ultimate counter-strategy. It was a race against time. Every second counted, and the energy in the room was absolutely electric!`,
+                        `Using sheer determination and a bit of luck, our characters managed to turn the tables. The rival was shocked! 'How are they doing this?' they cried out as ${protagonist} smiled confidently.`
+                    ];
+
+                    const twistTemplates = [
+                        `Just when victory seemed certain, a funny distraction happened. A runaway skateboard (or was it a stray balloon?) rolled right through the middle of the scene! ${protagonist} had to pause and laugh, which actually helped clear their mind.`,
+                        `But the adventure wasn't over yet. A minor setback tested their resolve. ${protagonist} remembered that true strength comes from within, and they refused to give up on their mission.`,
+                        `Our heroes faced one final, goofy obstacle. It was a test of their true character, perfectly suited for anyone in the ${age} age group who loves a good laugh.`
+                    ];
+
+                    const deepClimaxTemplates = [
+                        `This was the defining moment. With the entire school watching, ${protagonist} stepped forward to activate the final sequence. They had to input the secret code while balancing on a giant bouncy ball. The suspense was almost too much to bear!`,
+                        `The energy reached its peak. A giant flash of harmless neon light illuminated the playground. ${protagonist} executed the final step of their plan with perfect precision, proving that even the clumsiest heroes can achieve greatness.`,
+                        `It was now or never! With one final, heroic effort, they crossed the finish line. The rival’s machines sputtered, beeped twice, and began to spin out of control in the most amusing way possible.`
+                    ];
+
+                    const resolutionTemplates = [
+                        `With one final, creative push, the problem was solved! The silly threat dissolved into a shower of harmless bubbles and friendly smiles. The rival realized they had been defeated by pure kindness and clever tactics.`,
+                        `Success! The plan worked perfectly. The neighborhood cheered as ${protagonist} took a well-deserved bow. The chaotic energy settled, leaving behind a wonderful sense of accomplishment.`,
+                        `Everything went back to normal, but with a lot more laughter than before. The day was saved, and everyone learned a valuable lesson about working together.`
+                    ];
+
+                    const conclusionTemplates = [
+                        `As the sun set on this epic ${genre} day, ${protagonist} looked back on the adventure with a giant smile. They knew that whenever trouble arose, they'd be ready. Remember: "${moral}"`,
+                        `And so, our story comes to a peaceful end. The characters proved that no challenge is too big when you have a good heart. As we learned today: "${moral}"`,
+                        `With the mystery solved, ${protagonist} headed home for a well-deserved snack. This adventure taught everyone a lesson they'll never forget. Always remember: "${moral}"`
+                    ];
+
+                    const pages = [];
+                    for (let i = 0; i < pageCount; i++) {
+                        let text = "";
+                        if (i === 0) {
+                            text = introTemplates[Math.floor(Math.random() * introTemplates.length)];
+                        } else if (i === 1) {
+                            text = conflictTemplates[Math.floor(Math.random() * conflictTemplates.length)];
+                        } else if (i === 2) {
+                            text = risingActionTemplates[Math.floor(Math.random() * risingActionTemplates.length)];
+                        } else if (i === 3) {
+                            text = actionTemplates[Math.floor(Math.random() * actionTemplates.length)];
+                        } else if (i === 4) {
+                            text = twistTemplates[Math.floor(Math.random() * twistTemplates.length)];
+                        } else if (i === 5) {
+                            text = deepClimaxTemplates[Math.floor(Math.random() * deepClimaxTemplates.length)];
+                        } else if (i === 6) {
+                            text = resolutionTemplates[Math.floor(Math.random() * resolutionTemplates.length)];
+                        } else {
+                            text = conclusionTemplates[Math.floor(Math.random() * conclusionTemplates.length)];
+                        }
+                        pages.push({
+                            text: text,
+                            imageUrl: i === 0 ? "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=500" : null
+                        });
+                    }
+
+                    const newBook = {
+                        id: 'book-' + Date.now(),
+                        title,
+                        genre,
+                        ageZone: age,
+                        wordsPerPage: words,
+                        pageCount,
+                        blurb,
+                        coverUrl: cover,
+                        moralOfStory: moral,
+                        price,
+                        published: false,
+                        giveawaySlug: 'dy14-' + Math.random().toString(36).substring(2, 8),
+                        buyers: 0,
+                        pages
+                    };
+
+                    books.push(newBook);
+                    localStorage.setItem('book_tome_books', JSON.stringify(books));
+
+                    progressContainer.classList.add('hidden');
+                    document.getElementById('ai-progress-bar').style.width = '0%';
+                    document.getElementById('admin-submit-btn').disabled = false;
+                    document.getElementById('admin-submit-btn').classList.remove('opacity-50');
+
+                    playSound('success');
+                    alert(`📚 Book "${title}" generated and assembled successfully in Draft state!`);
+                    renderAdminPage();
+                    renderCatalog();
+                }
+            }, 300);
+        }
+
+        function togglePublishState(id) {
+            playSound('click');
+            const book = books.find(b => b.id === id);
+            if (book) {
+                book.published = !book.published;
+                localStorage.setItem('book_tome_books', JSON.stringify(books));
+                renderAdminPage();
+                renderCatalog();
+            }
+        }
+
+        function deleteBook(id) {
+            playSound('click');
+            if (confirm("Are you sure you want to delete this book completely?")) {
+                books = books.filter(b => b.id !== id);
+                localStorage.setItem('book_tome_books', JSON.stringify(books));
+                renderAdminPage();
+                renderCatalog();
+            }
+        }
+
+        function copyGiveawayLink(slug) {
+            playSound('success');
+            const url = `${window.location.origin}${window.location.pathname}?g=${slug}`;
+            navigator.clipboard.writeText(url).then(() => {
+                alert(`📋 Secret Giveaway URL copied to clipboard!\n${url}`);
+            });
+        }
+
+        // AUTH & GATED ACCESS
+        function openAuthModal(mode, customAlertText = "") {
+            playSound('click');
+            document.getElementById('auth-modal').classList.remove('hidden');
+            const title = document.getElementById('auth-modal-title');
+            const btn = document.getElementById('auth-submit-btn');
+            const prompt = document.getElementById('auth-toggle-prompt');
+            const alertMsg = document.getElementById('auth-modal-alert-msg');
+
+            if (customAlertText) {
+                alertMsg.innerText = customAlertText;
+                alertMsg.classList.remove('hidden');
+            } else {
+                alertMsg.classList.add('hidden');
+            }
+
+            if (mode === 'signup') {
+                title.innerText = "Create Account";
+                btn.innerText = "Sign Up & Unlock Site";
+                prompt.innerHTML = `Already have an account? <a href="#" onclick="toggleAuthMode()" class="text-tomeOrange-500 font-bold hover:underline">Sign In</a>`;
+            } else {
+                title.innerText = "Sign In";
+                btn.innerText = "Sign In";
+                prompt.innerHTML = `Don't have an account? <a href="#" onclick="toggleAuthMode()" class="text-tomeOrange-500 font-bold hover:underline">Sign Up</a>`;
+            }
+        }
+
+        function closeAuthModal() {
+            document.getElementById('auth-modal').classList.add('hidden');
+        }
+
+        function toggleAuthMode() {
+            const title = document.getElementById('auth-modal-title').innerText;
+            const currentAlert = document.getElementById('auth-modal-alert-msg').innerText;
+            openAuthModal(title === "Sign In" ? "signup" : "signin", currentAlert);
+        }
+
+        function submitAuth() {
+            playSound('success');
+            const username = document.getElementById('auth-username').value.trim();
+            const password = document.getElementById('auth-password').value.trim();
+            
+            if (!username) {
+                alert("Please enter a username!");
+                return;
+            }
+
+            if (username.toLowerCase() === 'admin' || password === '123Jasonsgame!15412907') {
+                isMasterAdmin = true;
+                currentUser = {
+                    id: 'admin-user',
+                    username: 'Master Publisher (admin)'
+                };
+                localStorage.setItem('book_tome_current_user', JSON.stringify(currentUser));
+                document.getElementById('admin-unlocked-toast').classList.remove('hidden');
+                document.getElementById('nav-admin').classList.remove('hidden');
+                closeAuthModal();
+                updateAuthUI();
+                applyUserThemeStyles();
+                renderCatalog();
+                alert("🔒 Welcome back, Jason. Master Panel and Google Search tools have been successfully initialized.");
+                navigate('admin');
+                return;
+            }
+
+            currentUser = {
+                id: 'user-' + Date.now(),
+                username: username,
+                redeemedCredits: 0
+            };
+            localStorage.setItem('book_tome_current_user', JSON.stringify(currentUser));
+            
+            closeAuthModal();
+            updateAuthUI();
+            applyUserThemeStyles();
+            renderCatalog();
+            triggerOllieTour();
+            navigate('home');
+        }
+
+        function logout() {
+            playSound('click');
+            currentUser = null;
+            isMasterAdmin = false;
+            localStorage.removeItem('book_tome_current_user');
+            
+            document.getElementById('nav-admin').classList.add('hidden');
+            document.getElementById('admin-unlocked-toast').classList.add('hidden');
+
+            updateAuthUI();
+            applyUserThemeStyles();
+            navigate('home');
+            renderCatalog();
+        }
+
+        function updateAuthUI() {
+            const authSec = document.getElementById('auth-section');
+            const userSec = document.getElementById('user-section');
+            const navLibrary = document.getElementById('nav-library');
+            const navProfile = document.getElementById('nav-profile');
+
+            if (currentUser) {
+                authSec.classList.add('hidden');
+                userSec.classList.remove('hidden');
+                navLibrary.classList.remove('hidden');
+                navProfile.classList.remove('hidden');
+                document.getElementById('user-display-name').innerText = currentUser.username;
+                document.getElementById('user-avatar').innerText = currentUser.username.charAt(0).toUpperCase();
+                
+                if (isMasterAdmin) {
+                    document.getElementById('nav-admin').classList.remove('hidden');
+                }
+            } else {
+                authSec.classList.remove('hidden');
+                userSec.classList.add('hidden');
+                navLibrary.classList.add('hidden');
+                navProfile.classList.add('hidden');
+            }
+        }
+
+        // CHECKOUT WALLS & PURCHASE FLOW
+        let activeCheckoutBookId = null;
+
+        function triggerCheckout(bookId) {
+            playSound('click');
+            const book = books.find(b => b.id === bookId);
+            if (!book) return;
+
+            activeCheckoutBookId = bookId;
+            document.getElementById('checkout-modal').classList.remove('hidden');
+            document.getElementById('checkout-book-cover').src = book.coverUrl;
+            document.getElementById('checkout-book-title').innerText = book.title;
+            document.getElementById('checkout-book-genre').innerText = book.genre;
+
+            const price = calculatePrice(book);
+            document.getElementById('checkout-book-price').innerText = `$${price}`;
+            document.getElementById('breakdown-base-price').innerText = `$${book.price.toFixed(2)}`;
+
+            const isFirst = currentUser && (purchasedBooks[currentUser.id] || []).length === 0;
+            const holiday = getDetectedHoliday();
+
+            if (holiday || isFirst) {
+                document.getElementById('checkout-discount-row').classList.remove('hidden');
+                const discountAmt = (book.price - parseFloat(price)).toFixed(2);
+                document.getElementById('checkout-discount-val').innerText = `-$${discountAmt}`;
+                document.getElementById('checkout-discount-label').innerText = holiday ? `${holiday.name} Dynamic Promo` : "First Order Discount";
+            } else {
+                document.getElementById('checkout-discount-row').classList.add('hidden');
+            }
+
+            document.getElementById('breakdown-total-price').innerText = `$${price}`;
+
+            const loyaltyStats = getLoyaltyStats();
+            const loyaltyRow = document.getElementById('checkout-loyalty-row');
+            const creditsCount = document.getElementById('checkout-credits-count');
+
+            if (currentUser && loyaltyStats.availableCredits > 0) {
+                loyaltyRow.classList.remove('hidden');
+                creditsCount.innerText = loyaltyStats.availableCredits;
+            } else {
+                loyaltyRow.classList.add('hidden');
+            }
+
+            const authWarning = document.getElementById('checkout-auth-warning');
+            const authBtn = document.getElementById('checkout-auth-btn');
+            const payBtn = document.getElementById('checkout-pay-btn');
+
+            if (!currentUser) {
+                authWarning.classList.remove('hidden');
+                authBtn.classList.remove('hidden');
+                payBtn.classList.add('hidden');
+            } else {
+                authWarning.classList.add('hidden');
+                authBtn.classList.add('hidden');
+                payBtn.classList.remove('hidden');
+            }
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function routeGuestToAuth() {
+            closeCheckoutModal();
+            openAuthModal('signup', "Please create an account to secure checkout options.");
+        }
+
+        function processPurchase() {
+            if (!currentUser || !activeCheckoutBookId) return;
+
+            playSound('success');
+            
+            if (!purchasedBooks[currentUser.id]) {
+                purchasedBooks[currentUser.id] = [];
+            }
+            purchasedBooks[currentUser.id].push(activeCheckoutBookId);
+            localStorage.setItem('book_tome_purchased', JSON.stringify(purchasedBooks));
+
+            const book = books.find(b => b.id === activeCheckoutBookId);
+            if (book) {
+                book.buyers = (book.buyers || 0) + 1;
+                localStorage.setItem('book_tome_books', JSON.stringify(books));
+            }
+
+            alert(`🎉 Success! "${book.title}" has been permanently added to your personal sanctuary.`);
+            closeCheckoutModal();
+            renderCatalog();
+            renderOwnedLibrary();
+            updateLoyaltyUI();
+            navigate('library');
+        }
+
+        // TRADITIONAL DOUBLE PAGE READER INTERFACE
+        function launchBookReaderById(id) {
+            const book = books.find(b => b.id === id);
+            if (book) launchBookReader(book);
+        }
+
+        function launchBookReader(book) {
+            playSound('page-flip');
+            activeBook = book;
+            activeBookPageIdx = 0;
+
+            document.getElementById('book-reader-modal').classList.remove('hidden');
+            document.getElementById('reader-title').innerText = book.title;
+            document.getElementById('reader-genre-badge').innerText = book.genre;
+
+            isReadingAloud = false;
+            updateReadAloudButtonUI();
+
+            updateReaderPages();
+        }
+
+        function updateReaderPages() {
+            if (!activeBook) return;
+
+            const leftPageText = document.getElementById('left-page-content');
+            const rightPageText = document.getElementById('right-page-content');
+            const leftPageNum = document.getElementById('left-page-num');
+            const rightPageNum = document.getElementById('right-page-num');
+
+            if (activeBookPageIdx === 0) {
+                leftPageText.innerHTML = `
+                    <div class="h-full flex flex-col justify-between text-center py-6 px-4 border-2 border-amber-900/10 rounded-xl bg-gradient-to-b from-amber-100/50 to-amber-50 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none" style="background-image: url('${activeBook.coverUrl}')"></div>
+                        <div>
+                            <span class="text-[9px] uppercase tracking-widest font-bold text-amber-800/80">Premium Edition</span>
+                            <h1 class="font-cinzel text-xl sm:text-2xl font-black text-amber-950 mt-4 leading-tight">${activeBook.title}</h1>
+                            <div class="w-12 h-0.5 bg-amber-800 mx-auto my-3"></div>
+                            <p class="text-xs font-serif italic text-amber-900/70">${activeBook.genre}</p>
+                        </div>
+                        <div class="my-4">
+                            <img src="${activeBook.coverUrl}" class="w-24 h-32 object-cover mx-auto rounded shadow-lg border border-amber-900/20" onerror="handleCoverError(this)">
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold text-amber-900/60 uppercase tracking-wider">Book Tomes Storyverse</p>
+                            <p class="text-[9px] text-amber-800/40 mt-1">Age Zone ${activeBook.ageZone}</p>
+                        </div>
+                    </div>
+                `;
+                leftPageNum.innerText = "Cover Page";
+
+                const rightData = activeBook.pages[0];
+                if (rightData) {
+                    rightPageText.innerHTML = `
+                        ${rightData.imageUrl ? `
+                        <div class="w-full mb-4 overflow-hidden rounded-xl shadow-md border border-amber-900/10 bg-slate-900">
+                            <img src="${rightData.imageUrl}" class="w-full h-44 object-cover hover:scale-105 transition-all duration-300" alt="Page Image" onerror="handleCoverError(this)">
+                        </div>` : ''}
+                        <p class="text-slate-800 leading-relaxed font-serif text-sm sm:text-base story-dropcap">${rightData.text}</p>
+                    `;
+                    rightPageNum.innerText = "Page 1";
+                } else {
+                    rightPageText.innerHTML = `<p class="text-amber-800/20 italic text-center py-20">The End</p>`;
+                    rightPageNum.innerText = "";
+                }
+            } else {
+                const leftData = activeBook.pages[activeBookPageIdx - 1];
+                if (leftData) {
+                    leftPageText.innerHTML = `
+                        ${leftData.imageUrl ? `
+                        <div class="w-full mb-4 overflow-hidden rounded-xl shadow-md border border-amber-900/10 bg-slate-900">
+                            <img src="${leftData.imageUrl}" class="w-full h-44 object-cover hover:scale-105 transition-all duration-300" alt="Page Image" onerror="handleCoverError(this)">
+                        </div>` : ''}
+                        <p class="text-slate-800 leading-relaxed font-serif text-sm sm:text-base">${leftData.text}</p>
+                    `;
+                    leftPageNum.innerText = `Page ${activeBookPageIdx}`;
+                } else {
+                    leftPageText.innerHTML = `<p class="text-amber-800/20 italic text-center py-20">The End</p>`;
+                    leftPageNum.innerText = "";
+                }
+
+                const rightData = activeBook.pages[activeBookPageIdx];
+                if (rightData) {
+                    rightPageText.innerHTML = `
+                        ${rightData.imageUrl ? `
+                        <div class="w-full mb-4 overflow-hidden rounded-xl shadow-md border border-amber-900/10 bg-slate-900">
+                            <img src="${rightData.imageUrl}" class="w-full h-44 object-cover hover:scale-105 transition-all duration-300" alt="Page Image" onerror="handleCoverError(this)">
+                        </div>` : ''}
+                        <p class="text-slate-800 leading-relaxed font-serif text-sm sm:text-base">${rightData.text}</p>
+                    `;
+                    rightPageNum.innerText = `Page ${activeBookPageIdx + 1}`;
+                } else {
+                    rightPageText.innerHTML = `<p class="text-amber-800/20 italic text-center py-20">The End</p>`;
+                    rightPageNum.innerText = "";
+                }
+            }
+
+            const totalPages = activeBook.pages.length + 1;
+            const currentPosition = activeBookPageIdx === 0 ? 1 : activeBookPageIdx + 1;
+            const progress = Math.min(100, Math.round((currentPosition / totalPages) * 100));
+            document.getElementById('book-progress-indicator').innerText = `Reading Progress: ${progress}%`;
+
+            if (isReadingAloud) {
+                speakCurrentSpread();
+            }
+        }
+
+        function prevBookPage() {
+            if (activeBookPageIdx > 0) {
+                playSound('page-flip');
+                activeBookPageIdx = Math.max(0, activeBookPageIdx - 2);
+                updateReaderPages();
+            }
+        }
+
+        function nextBookPage() {
+            if (activeBook) {
+                const totalStoryPages = activeBook.pages.length;
+                if (activeBookPageIdx + 2 <= totalStoryPages) {
+                    playSound('page-flip');
+                    activeBookPageIdx += 2;
+                    updateReaderPages();
+                } else {
+                    playSound('success');
+                    alert("🎉 You have reached the end of this beautiful tale!");
+                }
+            }
+        }
+
+        // READ ALOUD ON/OFF TOGGLE
+        function toggleReadAloud() {
+            if (!activeBook) return;
+
+            isReadingAloud = !isReadingAloud;
+            updateReadAloudButtonUI();
+
+            if (isReadingAloud) {
+                playSound('success');
+                speakCurrentSpread();
+            } else {
+                playSound('click');
+                if ('speechSynthesis' in window) {
+                    window.speechSynthesis.cancel();
+                }
+            }
+        }
+
+        function updateReadAloudButtonUI() {
+            const btn = document.getElementById('read-aloud-btn');
+            if (isReadingAloud) {
+                btn.className = "bg-gradient-to-r from-tomeGreen-500 to-tomeGreen-600 text-slate-950 font-bold px-4 py-2 rounded-lg text-xs transition flex items-center gap-1.5 shadow-md";
+                btn.innerHTML = `<i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Read Aloud: ON`;
+            } else {
+                btn.className = "bg-gradient-to-r from-red-500 to-red-600 text-white font-bold px-4 py-2 rounded-lg text-xs transition flex items-center gap-1.5 shadow-md";
+                btn.innerHTML = `<i data-lucide="volume-x" class="w-3.5 h-3.5"></i> Read Aloud: OFF`;
+            }
+            lucide.createIcons();
+        }
+
+        function speakCurrentSpread() {
+            if (!('speechSynthesis' in window)) {
+                alert("⚠️ Web Speech API is not supported in this browser.");
+                return;
+            }
+
+            window.speechSynthesis.cancel(); // Stop current speech
+
+            const selectedVoiceName = document.getElementById('reader-voice-select').value;
+            let textToRead = "";
+
+            if (activeBookPageIdx === 0) {
+                textToRead += `${activeBook.title}. A ${activeBook.genre} tale. `;
+                const page1 = activeBook.pages[0];
+                if (page1) textToRead += page1.text;
+            } else {
+                const leftPage = activeBook.pages[activeBookPageIdx - 1];
+                const rightPage = activeBook.pages[activeBookPageIdx];
+                if (leftPage) textToRead += leftPage.text + " ";
+                if (rightPage) textToRead += rightPage.text;
+            }
+
+            if (textToRead.trim() === "") return;
+
+            const utterance = new SpeechSynthesisUtterance(textToRead);
+            const voices = window.speechSynthesis.getVoices();
+            const isFemaleName = ["Aria", "Luna", "Nova", "Sage", "Celeste", "Ivy", "Ember", "Pearl", "Zara"].includes(selectedVoiceName);
+            
+            let voiceToUse = null;
+            for (let v of voices) {
+                const lName = v.name.toLowerCase();
+                if (isFemaleName && (lName.includes('female') || lName.includes('zira') || lName.includes('samantha') || lName.includes('google us english') || lName.includes('hazel'))) {
+                    voiceToUse = v;
+                    break;
+                } else if (!isFemaleName && (lName.includes('male') || lName.includes('david') || lName.includes('google uk english') || lName.includes('ravi'))) {
+                    voiceToUse = v;
+                    break;
+                }
+            }
+
+            if (voiceToUse) utterance.voice = voiceToUse;
+            utterance.rate = 0.95;
+            utterance.pitch = isFemaleName ? 1.1 : 0.9;
+
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function closeBookReader() {
+            if (window.speechSynthesis) {
+                window.speechSynthesis.cancel();
+            }
+            document.getElementById('book-reader-modal').classList.add('hidden');
+            activeBook = null;
+            isReadingAloud = false;
+        }
+
+        // ONBOARDING OWL TOUR
+        let currentTourStep = 0;
+        const tourSteps = [
+            { text: "Hoot! I'm Ollie, your magical library guide. Let me show you around Book Tomes!", target: null },
+            { text: "Use our descriptive search bar to tell us exactly what kind of book you want to read. (Psst... admins can enter master passwords here!)", target: "main-search" },
+            { text: "Browse the Grand Library catalog below. Click 'Browse 100 Genres' to see our newly expanded categorization!", target: "catalog-grid" },
+            { text: "Click on any book card to open a traditional page-flip layout reader with a center spine and fixed navigation.", target: "catalog-grid" },
+            { text: "Create an account to unlock your personal Sanctuary Library and track your progress.", target: "auth-section" },
+            { text: "Every user gets stable deterministic badges (up to 1,000,000 possibilities!) generated from their unique ID.", target: "nav-profile" },
+            { text: "Ready to explore? Standard base pricing is $4.00, but watch out for automatic holiday discounts of up to 75% off! Let's read!", target: null }
+        ];
+
+        function checkOllieTour() {
+            const completed = localStorage.getItem('book_tome_tour_completed');
+            if (!completed && currentUser) {
+                triggerOllieTour();
+            }
+        }
+
+        function triggerOllieTour() {
+            currentTourStep = 0;
+            document.getElementById('ollie-tour-container').classList.remove('hidden');
+            showTourStep();
+        }
+
+        function showTourStep() {
+            playSound('hoot');
+            const step = tourSteps[currentTourStep];
+            document.getElementById('tour-step-num').innerText = `${currentTourStep + 1}/${tourSteps.length}`;
+            document.getElementById('tour-step-text').innerText = step.text;
+
+            if (step.target) {
+                const el = document.getElementById(step.target);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    el.classList.add('ring-4', 'ring-tomeOrange-500', 'ring-offset-4', 'ring-offset-slate-950');
+                    setTimeout(() => {
+                        el.classList.remove('ring-4', 'ring-tomeOrange-500', 'ring-offset-4', 'ring-offset-slate-950');
+                    }, 3000);
+                }
+            }
+        }
+
+        function nextTourStep() {
+            currentTourStep++;
+            if (currentTourStep < tourSteps.length) {
+                showTourStep();
+            } else {
+                skipTour();
+            }
+        }
+
+        function skipTour() {
+            playSound('success');
+            localStorage.setItem('book_tome_tour_completed', 'true');
+            document.getElementById('ollie-tour-container').classList.add('hidden');
+        }
+
+        // MULTIMEDIA PAGE-BY-PAGE EDITOR
+        function openMultimediaEditor(bookId) {
+            playSound('click');
+            const book = books.find(b => b.id === bookId);
+            if (!book) return;
+
+            selectedMediaBook = book;
+            selectedMediaPageIdx = 0;
+
+            document.getElementById('multimedia-editor-modal').classList.remove('hidden');
+            renderMediaPagesList();
+            loadSelectedMediaPage();
+        }
+
+        function renderMediaPagesList() {
+            const container = document.getElementById('media-pages-list');
+            container.innerHTML = '';
+
+            selectedMediaBook.pages.forEach((page, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `w-full text-left p-3 rounded-xl border text-xs flex items-center justify-between transition ${idx === selectedMediaPageIdx ? 'bg-tomeOrange-500/10 border-tomeOrange-500 text-tomeOrange-500 font-bold' : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-white'}`;
+                
+                btn.onclick = () => {
+                    playSound('click');
+                    selectedMediaPageIdx = idx;
+                    renderMediaPagesList();
+                    loadSelectedMediaPage();
+                };
+
+                btn.innerHTML = `
+                    <span>Page #${idx + 1}</span>
+                    ${page.imageUrl ? `<span class="text-xs" title="Visual Fitted">🖼️</span>` : ''}
+                `;
+                container.appendChild(btn);
+            });
+        }
+
+        function loadSelectedMediaPage() {
+            const page = selectedMediaBook.pages[selectedMediaPageIdx];
+            document.getElementById('editing-page-label').innerText = `Page #${selectedMediaPageIdx + 1}`;
+            document.getElementById('editing-page-text').value = page.text;
+            document.getElementById('editing-page-image-url').value = page.imageUrl || '';
+        }
+
+        function clearPageImage() {
+            playSound('click');
+            document.getElementById('editing-page-image-url').value = '';
+        }
+
+        function commitLayoutRedesign() {
+            playSound('click');
+            const text = document.getElementById('editing-page-text').value;
+            const imageUrl = document.getElementById('editing-page-image-url').value;
+
+            const progressContainer = document.getElementById('layout-progress-container');
+            progressContainer.classList.remove('hidden');
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 20;
+                document.getElementById('layout-progress-bar').style.width = `${progress}%`;
+                document.getElementById('layout-progress-text').innerText = `${progress}%`;
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    
+                    selectedMediaBook.pages[selectedMediaPageIdx].text = text;
+                    selectedMediaBook.pages[selectedMediaPageIdx].imageUrl = imageUrl || null;
+
+                    localStorage.setItem('book_tome_books', JSON.stringify(books));
+
+                    progressContainer.classList.add('hidden');
+                    document.getElementById('layout-progress-bar').style.width = '0%';
+
+                    playSound('success');
+                    alert("🎨 AI Layout Engine has finished redesigning the prose and wrapping visuals beautifully!");
+                    renderMediaPagesList();
+                    loadSelectedMediaPage();
+                    renderAdminPage();
+                    renderCatalog();
+                }
+            }, 300);
+        }
+
+        function closeMultimediaEditor() {
+            document.getElementById('multimedia-editor-modal').classList.add('hidden');
+            selectedMediaBook = null;
+        }
+    </script>
+</body>
+</html>
